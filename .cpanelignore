@@ -1,0 +1,32 @@
+# Files to exclude when uploading to cPanel
+
+# Dependencies (install on server)
+node_modules/
+.pnpm-store/
+
+# Development files
+.git/
+.gitignore
+.vscode/
+.idea/
+*.log
+.DS_Store
+
+# Build cache (optional)
+.next/cache/
+
+# Environment files (if any)
+.env.local
+.env.development
+.env.test
+
+# Documentation (optional)
+README.md
+CPANEL_DEPLOYMENT.md
+*.md
+
+# Test files
+**/__tests__/
+**/*.test.*
+**/*.spec.*
+
