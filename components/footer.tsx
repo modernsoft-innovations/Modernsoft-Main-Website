@@ -16,13 +16,11 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-16">
 
         {/* TOP GRID */}
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
 
           {/* Company / Brand */}
-          <div>
+          <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              {/* Logo */}
-              
               <div>
                 <h3 className="text-white font-bold text-lg">
                   ModernSoft Innovations
@@ -33,9 +31,9 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-sm leading-relaxed">
-              We build custom business software, ERP, POS, and digital systems
-              that help enterprises operate smarter and scale faster.
+            <p className="text-sm leading-relaxed max-w-md">
+              We build custom business software, ERP, POS, and scalable digital
+              systems for growing companies and enterprises worldwide.
             </p>
 
             {/* Social Links */}
@@ -81,13 +79,12 @@ export default function Footer() {
             <h3 className="text-white font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               {[
-                { name: "Website Design & Development", href: "/services/websites-seo" },
-                { name: "Custom Software Development", href: "/services/custom-software" },
+                { name: "Website Development", href: "/services/websites-seo" },
+                { name: "Custom Software", href: "/services/custom-software" },
                 { name: "Mobile App Development", href: "/services/mobile-apps" },
-                { name: "AI & Business Automation", href: "/services/ai-automation" },
-                { name: "UI/UX Product Design", href: "/services/ui-ux-design" },
-                { name: "QA & Software Testing", href: "/services/qa-testing" },
-                { name: "SEO & Digital Marketing", href: "/services/websites-seo" },
+                { name: "AI & Automation", href: "/services/ai-automation" },
+                { name: "UI/UX Design", href: "/services/ui-ux-design" },
+                { name: "QA & Testing", href: "/services/qa-testing" },
               ].map((service) => (
                 <li key={service.name}>
                   <Link
@@ -101,25 +98,23 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Collaboration Models */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">
-              Collaboration Models
-            </h3>
+            <h3 className="text-white font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               {[
-                "White Label Partnership",
-                "Staff Augmentation",
-                "MVP Development",
-                "Solution Partner",
-                "Project-Based Development",
-              ].map((item) => (
-                <li key={item}>
+                { name: "About Us", href: "/about" },
+                { name: "Collaboration Models", href: "/collaboration-models" },
+                { name: "Case Studies", href: "/portfolio" },
+                { name: "Careers", href: "/careers" },
+                { name: "Contact", href: "/contact" },
+              ].map((link) => (
+                <li key={link.name}>
                   <Link
-                    href="/partnerships"
+                    href={link.href}
                     className="hover:text-blue-400 transition-colors"
                   >
-                    {item}
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -151,7 +146,7 @@ export default function Footer() {
               <div className="flex gap-3">
                 <MapPin className="w-5 h-5 text-blue-400" />
                 <span>
-                  Shkhertake, Road 02<br />
+                  
                   Adabor, Dhaka-1207
                 </span>
               </div>
@@ -195,6 +190,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+
       </div>
     </footer>
   )

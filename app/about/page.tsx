@@ -3,6 +3,7 @@ import AboutHero from "@/components/about/about-hero"
 import OurStory from "@/components/about/our-story"
 import Leadership from "@/components/about/leadership"
 import OurValues from "@/components/about/our-values"
+import DevelopmentProcess from "@/components/DevelopmentProcess"
 
 export const metadata: Metadata = {
   title: "About Us - Leadership & Team | Modernsoft Innovations",
@@ -16,7 +17,9 @@ export default function AboutPage() {
     <main className="min-h-screen pt-20">
       <AboutHero />
       <OurStory />
+      <DevelopmentProcess />
       <Leadership />
+      
       {/* <OurValues /> */}
     </main>
   )

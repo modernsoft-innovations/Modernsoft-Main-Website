@@ -259,10 +259,15 @@ export default function CaseStudyDetail({ project }: { project: Project }) {
                 Let's discuss how we can help transform your business with custom software solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white">
-                  Schedule Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+               <a
+              href="https://calendly.com/sadmansakib4112/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-yellow-400 hover:bg-yellow-600 text-black px-8 py-6">
+                Schedule Consultant
+              </Button>
+            </a>
                 <Button size="lg" variant="outline" asChild>
                   <Link href="/portfolio">View More Projects</Link>
                 </Button>

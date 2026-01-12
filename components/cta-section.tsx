@@ -27,7 +27,7 @@ export default function CTASection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-yellow-500 hover:bg-blue-700 text-black text-lg px-8 py-6"
+                className="bg-yellow-400 hover:bg-blue-700 text-black text-lg px-8 py-6"
                 onClick={() => setShowScheduleModal(true)}
               >
                 Schedule Free Call

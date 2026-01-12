@@ -1,237 +1,518 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import CaseStudyDetail from "@/components/portfolio/case-study-detail"
+import Image from "next/image"
 import Link from "next/link"
-/* =====================================================
-   CASE STUDY DATA – ModernSoft Innovations
-===================================================== */
+import { Button } from "@/components/ui/button"
+import { CheckCircle } from "lucide-react"
 
-export const projects = [
+/* ================= TYPES ================= */
+
+type Project = {
+  slug: string
+  title: string
+  subtitle: string
+  category: string
+  location: string
+  year: string
+  image?: string | null
+  description: string
+  overview: string
+  challenges: string[]
+  solutions: string[]
+  deliveryTime: string
+  maintenance: string[]
+  technologies: string[]
+}
+
+
+/* ================= DATA ================= */
+
+const projects: Project[] = [
   {
     slug: "megamart-ecommerce",
-    title: "megamart-ecommerce",
-    industry: "E-commerce",
+    title: "MegaMart: Scaling a Multi-Category eCommerce Platform",
+    subtitle:
+      "A high-growth eCommerce system designed for performance, scalability, and conversions.",
+    category: "E-commerce",
     location: "Australia",
     year: "2025",
-    category: "Web",
+    image: "/megamart.png",
     description:
-      "Your trusted online shopping destination for toys, electronics, fashion and more.",
-    challenge:
-      "The client needed a scalable e-commerce platform that could handle multiple product categories, smooth checkout, and high traffic without relying on third-party marketplaces.",
-    solution:
-      "We built a custom e-commerce website with optimized product browsing, fast checkout flow, and a flexible admin system.",
-    features: [
-      { title: "Multi-category Store", description: "Toys, electronics, fashion and lifestyle products." },
-      { title: "Optimized Checkout", description: "Fast, mobile-first checkout experience." },
-      { title: "Admin Dashboard", description: "Manage products, orders and discounts easily." },
-      { title: "Performance Focused", description: "Optimized for speed and scalability." },
+      "A scalable multi-vendor eCommerce platform built to support rapid business growth.",
+    overview:
+      "MegaMart required a future-ready eCommerce platform capable of handling high traffic, complex product catalogs, and secure transactions. The project focused on performance optimization, SEO-friendly architecture, and conversion-driven UX.",
+    challenges: [
+      "Slow performance during peak traffic",
+      "High cart abandonment rate",
+      "Manual inventory tracking",
+      "Poor SEO visibility",
+      "Lack of centralized admin control",
     ],
-    technologies: ["Next.js", "React", "Node.js", "PostgreSQL", "Tailwind CSS"],
-    results: [
-      { metric: "Fast launch", label: "time to market", description: "Store launched within a tight timeline." },
-      { metric: "Stable traffic", label: "handling", description: "Smooth performance during peak usage." },
-      { metric: "Mobile-first", label: "experience", description: "Optimized shopping on mobile devices." },
+    solutions: [
+      "Custom scalable eCommerce architecture",
+      "Optimized checkout experience",
+      "Centralized admin dashboard",
+      "SEO-ready product & category structure",
+      "Mobile-first UI with fast load times",
     ],
-    images: ["/megamart.png"],
+    deliveryTime: "8–10 weeks",
+    maintenance: [
+      "Performance optimization",
+      "Security updates",
+      "Feature upgrades",
+      "System monitoring",
+    ],
+    technologies: ["Next.js", "React", "Tailwind CSS", "Node.js", "PostgreSQL"],
   },
+
   {
     slug: "electrohub",
-    title: "electrohub",
-    industry: "E-commerce",
+    title: "ElectroHub: High-Performance Electronics Online Store",
+    subtitle:
+      "A conversion-optimized electronics store for the US market.",
+    category: "E-commerce",
     location: "USA",
     year: "2025",
-    category: "Web",
+    image: "/electro.png",
     description:
-      "US-based electronics store with advanced filtering, cart and secure checkout.",
-    challenge:
-      "The client wanted a secure, scalable electronics store with smooth browsing and checkout.",
-    solution:
-      "Developed a modern e-commerce platform with advanced filters, cart, and payment integration.",
-    features: [
-      { title: "Product Filters", description: "Smart filtering and sorting." },
-      { title: "Secure Checkout", description: "Integrated payment gateways." },
-      { title: "Admin Dashboard", description: "Manage inventory, orders and discounts." },
+      "An advanced electronics eCommerce platform with secure checkout and filtering.",
+    overview:
+      "ElectroHub needed a fast, secure, and user-friendly online store to sell electronics nationwide. The focus was on UX, filtering, performance, and trust.",
+    challenges: [
+      "Complex product filtering",
+      "Checkout security concerns",
+      "Slow page loads",
     ],
-    technologies: ["Next.js", "React", "Node.js", "PostgreSQL", "Tailwind CSS"],
-    results: [
-      { metric: "High conversion", label: "rate", description: "Smooth checkout increased sales." },
+    solutions: [
+      "Advanced product filtering",
+      "Secure payment gateway integration",
+      "Optimized frontend performance",
     ],
-    images: ["/electrohub.png"],
+    deliveryTime: "6–8 weeks",
+    maintenance: [
+      "Security monitoring",
+      "Performance tuning",
+      "Feature enhancements",
+    ],
+    technologies: ["Next.js", "Stripe", "Tailwind", "Node.js"],
   },
+
   {
     slug: "paperless-smes",
-    title: "paperless-smes",
-    industry: "ERP / SME",
+    title: "Paperless SMEs: Business Management Software",
+    subtitle:
+      "An all-in-one ERP solution for small and medium businesses.",
+    category: "Enterprise",
+    location: "Bangladesh",
+    year: "2026",
+    image: "/paperless.png",
+    description:
+      "ERP software to automate invoices, inventory, and reporting.",
+    overview:
+      "Paperless SMEs is a complete business management system designed to eliminate manual workflows and improve operational efficiency.",
+    challenges: [
+      "Manual accounting processes",
+      "No centralized reporting",
+      "Inventory mismatches",
+    ],
+    solutions: [
+      "Custom ERP system",
+      "Real-time reporting dashboard",
+      "Automated invoicing & inventory",
+    ],
+    deliveryTime: "10–12 weeks",
+    maintenance: [
+      "System upgrades",
+      "User support",
+      "Security patches",
+    ],
+    technologies: ["Next.js", "ASP.NET Core", "PostgreSQL", "Azure"],
+  },
+
+  {
+    slug: "restaurant-management-system",
+    title: "Restaurant Management System",
+    subtitle:
+      "Complete order, staff, and operations management software.",
+    category: "Enterprise",
     location: "Bangladesh",
     year: "2025",
-    category: "Web",
+    image: "/restaurant-management.jpg",
     description:
-      "Unified SME business management system replacing spreadsheets and manual tracking.",
-    challenge:
-      "Disconnected spreadsheets made it difficult to track sales, inventory, and payments.",
-    solution:
-      "Developed an ERP-lite system covering sales, inventory, accounts and reports.",
-    features: [
-      { title: "Sales & POS", description: "Invoices, returns and receipts." },
-      { title: "Inventory", description: "Stock tracking and alerts." },
-      { title: "Accounting", description: "Ledgers and profit reports." },
+      "Software for managing restaurant operations and reporting.",
+    overview:
+      "This system helps restaurants manage orders, staff, inventory, and daily sales reports from a single dashboard.",
+    challenges: [
+      "Manual order tracking",
+      "Staff scheduling issues",
+      "Lack of real-time reports",
     ],
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
-    results: [
-      { metric: "90%", label: "digital", description: "Operations moved online." },
-      { metric: "Realtime", label: "visibility", description: "Live stock and sales data." },
+    solutions: [
+      "Centralized restaurant dashboard",
+      "Automated order processing",
+      "Daily sales analytics",
     ],
-    images: ["/paperless.png"],
+    deliveryTime: "8 weeks",
+    maintenance: [
+      "Bug fixes",
+      "Performance optimization",
+      "Feature upgrades",
+    ],
+    technologies: ["React", "Node.js", "PostgreSQL"],
   },
   {
     slug: "cafe-website",
-    title: "cafe-website",
-    industry: "Food & Beverage",
+    title: "Cafe Website – Restaurant Marketing Website",
+    subtitle:
+      "A modern cafe website designed to attract customers and increase reservations.",
+    category: "Website",
     location: "Australia",
     year: "2025",
-    category: "Web",
+    image: "/cafe-website.jpg",
     description:
-      "Modern marketing website designed to convert visitors into reservations and orders.",
-    challenge:
-      "The café needed a fast, mobile-friendly site to increase reservations.",
-    solution:
-      "Delivered an SEO-optimized website with clear CTAs and review integration.",
-    features: [
-      { title: "Menu Highlights", description: "Top dishes and offers." },
-      { title: "Google Reviews", description: "Trust-building social proof." },
-      { title: "Reservation CTA", description: "Clear conversion points." },
+      "The cafe needed a visually appealing website to increase foot traffic and online reservations.",
+    overview:
+      "This cafe website focuses on strong branding, SEO-optimized content, and smooth user experience to convert visitors into customers.",
+    challenges: [
+      "Low online visibility",
+      "No reservation funnel",
+      "Outdated branding",
     ],
-    technologies: ["Next.js", "Tailwind CSS"],
-    results: [
-      { metric: "+45%", label: "reservations", description: "Increase in online bookings." },
+    solutions: [
+      "Modern UI with strong visual storytelling",
+      "SEO-optimized pages",
+      "Clear call-to-action for reservations",
     ],
-    images: ["/cafe-website.jpg"],
+    deliveryTime: "3–4 weeks",
+    maintenance: [
+      "Content updates",
+      "SEO monitoring",
+    ],
+    technologies: ["Next.js", "Tailwind CSS", "SEO Best Practices"],
   },
+
+  /* ================= AUTOMOBILE SERVICING ================= */
   {
-    slug: "Automobile Servicing System",
-    title: "Bike Servicing Slot Booking",
-    industry: "Automotive",
+    slug: "automobile-servicing-system",
+    title: "Automobile Servicing System – Online Booking Platform",
+    subtitle:
+      "A digital solution for automobile service centers to manage bookings and operations.",
+    category: "Business Software",
     location: "Bangladesh",
-    year: "2025",
-    category: "Web",
+    year: "2026",
+    image: "/bike-servicing-slot-booking.jpg",
     description:
-      "Online appointment booking platform for bike servicing centers with date and time-slot selection.",
-    challenge:
-      "Service centers struggled with phone-based bookings causing congestion and poor capacity planning.",
-    solution:
-      "Built a real-time booking system with slot limits, notifications, and admin scheduling controls.",
-    features: [
-      { title: "Calendar Availability", description: "Day-wise capacity and holiday control." },
-      { title: "Slot Booking", description: "Real-time slot locking and confirmation." },
-      { title: "Notifications", description: "SMS and email alerts." },
-      { title: "Admin Controls", description: "Service bay and schedule management." },
+      "Workshops needed a centralized platform to manage service bookings and job tracking.",
+    overview:
+      "This system allows customers to book services online while workshop owners manage jobs, schedules, and payments efficiently.",
+    challenges: [
+      "Manual booking management",
+      "Poor customer experience",
+      "Lack of service tracking",
     ],
-    technologies: ["Next.js", "React", "Node.js", "PostgreSQL"],
-    results: [
-      { metric: "-60%", label: "calls", description: "Reduced booking calls significantly." },
-      { metric: "+35%", label: "utilization", description: "Better service bay usage." },
+    solutions: [
+      "Online service booking system",
+      "Job tracking dashboard",
+      "Customer notification system",
     ],
-    images: ["/bike-servicing-slot-booking.jpg"],
+    deliveryTime: "6–8 weeks",
+    maintenance: [
+      "System updates",
+      "Feature improvements",
+    ],
+    technologies: ["Next.js", "Node.js", "MongoDB"],
   },
-  {
-    slug: "Restaurant Management System",
-    title: "Restaurant Management System",
-    industry: "Food & Beverage",
+   {
+    slug: "coaching-center-management",
+    title: "Coaching Center Management System",
+    subtitle:
+      "Education management software for coaching and training centers.",
+    category: "Education",
     location: "Bangladesh",
-    year: "2025",
-    category: "Web",
+    year: "2026",
+    image: null,
     description:
-      "Back-office system covering POS, kitchen orders and reporting.",
-    challenge:
-      "Multiple disconnected tools caused delays and mistakes.",
-    solution:
-      "Unified POS and kitchen workflow into a single system.",
-    features: [
-      { title: "POS & Billing", description: "Fast order processing." },
-      { title: "Kitchen Orders", description: "Live order tracking." },
-      { title: "Reports", description: "Daily sales insights." },
+      "Coaching centers needed a system to manage students, fees, and attendance.",
+    overview:
+      "This system simplifies academic and administrative operations for coaching centers.",
+    challenges: [
+      "Manual student records",
+      "Fee tracking difficulties",
+      "Attendance management",
     ],
-    technologies: ["Next.js", "Node.js", "PostgreSQL"],
-    results: [
-      { metric: "+25%", label: "speed", description: "Faster order handling." },
+    solutions: [
+      "Student and batch management",
+      "Fee and payment tracking",
+      "Attendance automation",
     ],
-    images: ["/restaurant-management.jpg"],
+    deliveryTime: "4–6 weeks",
+    maintenance: [
+      "Ongoing support",
+      "Feature upgrades",
+    ],
+    technologies: ["Next.js", "Firebase", "Tailwind CSS"],
   },
+
   {
     slug: "pos-system",
-    title: "pos-system",
-    industry: "Retail / POS",
+    title: "Retail POS System",
+    subtitle:
+      "Fast and reliable point-of-sale software for retailers.",
+    category: "Enterprise",
     location: "Bangladesh",
     year: "2025",
-    category: "Web",
+    image: "/pos-system-interface.jpg",
     description:
-      "Point-of-sale system for retail with inventory and sales reporting.",
-    challenge:
-      "Manual billing and fragmented systems slowed operations.",
-    solution:
-      "Developed a unified POS system with inventory management and analytics.",
-    features: [
-      { title: "Billing & POS", description: "Quick invoice generation." },
-      { title: "Inventory Tracking", description: "Real-time stock updates." },
-      { title: "Reports & Analytics", description: "Daily and monthly insights." },
+      "Retail POS software with inventory and sales tracking.",
+    overview:
+      "A modern POS system designed for fast billing, inventory control, and reporting.",
+    challenges: [
+      "Slow billing process",
+      "Inventory mismatches",
     ],
-    technologies: ["Next.js", "Node.js", "PostgreSQL"],
-    results: [
-      { metric: "+30%", label: "efficiency", description: "Improved daily operations." },
+    solutions: [
+      "Fast POS interface",
+      "Real-time inventory sync",
     ],
-    images: ["/pos-system-interface.jpg"],
+    deliveryTime: "6 weeks",
+    maintenance: [
+      "System updates",
+      "Performance tuning",
+    ],
+    technologies: ["React", "Electron", "SQLite"],
   },
-];
+]
 
-/* =====================================================
-   REQUIRED FOR DYNAMIC ROUTES (FIXES 404)
-===================================================== */
+/* ================= HELPERS ================= */
 
-export function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }))
+function getProject(slug: string) {
+  return projects.find((p) => p.slug === slug)
 }
 
-/* =====================================================
-   METADATA
-===================================================== */
+/* ================= METADATA ================= */
 
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string }
 }): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug)
-
-  if (!project) {
-    return { title: "Project Not Found | ModernSoft Innovations" }
-  }
+  const project = getProject(params.slug)
+  if (!project) return { title: "Case Study Not Found" }
 
   return {
-    title: `${project.title} – Case Study | ModernSoft Innovations`,
+    title: `${project.title} | Case Study`,
     description: project.description,
   }
 }
+/* ================= PAGE ================= */
 
-/* =====================================================
-   PAGE
-===================================================== */
-
-export default function CaseStudyPage({
-  params,
-}: {
-  params: { slug: string }
-}) {
-  const project = projects.find((p) => p.slug === params.slug)
-
-  if (!project) {
-    notFound()
-  }
+export default function CaseStudyPage({ params }: { params: { slug: string } }) {
+  const project = getProject(params.slug)
+  if (!project) notFound()
 
   return (
-    <main className="min-h-screen bg-white">
-      <CaseStudyDetail project={project} />
+    <main className="bg-white">
+      {/* HERO */}
+    <section className="pt-36 pb-28 text-center">
+  <div className="container mx-auto px-4 max-w-6xl">
+    <h1 className="text-5xl md:text-6xl font-semibold mb-8 leading-tight">
+      {project.title}
+    </h1>
+
+    <p className="text-2xl text-slate-600 max-w-4xl mx-auto mb-12">
+      {project.subtitle}
+    </p>
+
+    <Link href="/contact">
+      <Button
+        size="lg"
+        className="bg-yellow-400 hover:bg-yellow-500 text-black px-12 py-7 rounded-full text-lg font-medium"
+      >
+        Start Similar Project →
+      </Button>
+    </Link>
+
+    <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-12 max-w-5xl mx-auto">
+      <Meta label="Industry" value={project.category} />
+      <Meta label="Location" value={project.location} />
+      <Meta label="Year" value={project.year} />
+      <Meta label="Technology" value={project.technologies.join(", ")} />
+    </div>
+  </div>
+</section>
+
+      {project.image && (
+        <section className="pb-24">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={1200}
+              height={700}
+              className="rounded-xl shadow-xl"
+            />
+          </div>
+        </section>
+      )}
+
+      {/* OVERVIEW */}
+      <Content title="Project Overview">
+        <p>{project.overview}</p>
+      </Content>
+
+      {/* CHALLENGES VS SOLUTIONS */}
+   <Content title="Business Challenges vs Our Solutions" gray>
+  <div className="grid md:grid-cols-2 gap-16 mt-16">
+    <div>
+      <h3 className="text-3xl font-semibold mb-8 text-red-600 text-center">
+        Business Challenges
+      </h3>
+      <ul className="space-y-6 text-xl">
+        {project.challenges.map((item) => (
+          <li key={item} className="flex gap-4">
+            <CheckCircle className="w-7 h-7 text-red-500 mt-1" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 className="text-3xl font-semibold mb-8 text-green-600 text-center">
+        Our Solutions
+      </h3>
+      <ul className="space-y-6 text-xl">
+        {project.solutions.map((item) => (
+          <li key={item} className="flex gap-4">
+            <CheckCircle className="w-7 h-7 text-green-600 mt-1" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</Content>
+
+      {/* BUSINESS IMPACT */}
+     <Content title="Business Impact After Our Solution">
+  <div className="grid md:grid-cols-2 gap-16">
+    <div className="bg-red-50 p-10 rounded-2xl">
+      <h3 className="text-3xl font-semibold mb-8 text-red-700 text-center">
+        Before
+      </h3>
+      <ul className="space-y-5 text-xl text-slate-700">
+        <li>• Manual workflows & inefficiencies</li>
+        <li>• Performance bottlenecks</li>
+        <li>• Low customer engagement</li>
+        <li>• Limited scalability</li>
+        <li>• Poor business visibility</li>
+      </ul>
+    </div>
+
+    <div className="bg-green-50 p-10 rounded-2xl">
+      <h3 className="text-3xl font-semibold mb-8 text-green-700 text-center">
+        After
+      </h3>
+      <ul className="space-y-5 text-xl text-slate-700">
+        <li>• Automated & streamlined operations</li>
+        <li>• High-performance scalable system</li>
+        <li>• Improved customer experience</li>
+        <li>• Real-time reporting & insights</li>
+        <li>• Higher operational efficiency</li>
+      </ul>
+    </div>
+  </div>
+</Content>
+
+      {/* DELIVERY */}
+      <Content title="Delivery Timeline" gray>
+        <p className="text-xl font-medium">{project.deliveryTime}</p>
+      </Content>
+
+      {/* MAINTENANCE */}
+      <Content title="Maintenance & Support">
+        <List items={project.maintenance} />
+      </Content>
+
+      {/* TECHNOLOGY */}
+      <Content title="Technology Stack" gray>
+        <div className="flex flex-wrap gap-4">
+          {project.technologies.map((t) => (
+            <span
+              key={t}
+              className="px-5 py-2 bg-slate-900 text-white rounded-full text-base"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </Content>
+
+      {/* CTA */}
+   <section className="py-28 bg-slate-900 text-center text-white">
+  <h2 className="text-4xl md:text-5xl font-semibold mb-10">
+    Want a similar enterprise solution?
+  </h2>
+
+  <Link href="/contact">
+    <Button
+      size="lg"
+      className="bg-yellow-400 hover:bg-yellow-500 text-black px-12 py-7 rounded-full text-lg font-medium"
+    >
+      Talk to Our Experts →
+    </Button>
+  </Link>
+</section>
+
     </main>
+  )
+}
+
+/* ================= UI HELPERS ================= */
+
+function Meta({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <p className="text-sm text-slate-500">{label}</p>
+      <p className="text-lg font-medium text-slate-900">{value}</p>
+    </div>
+  )
+}
+
+function Content({
+  title,
+  children,
+  gray = false,
+}: {
+  title: string
+  children: React.ReactNode
+  gray?: boolean
+}) {
+  return (
+    <section className={`py-28 ${gray ? "bg-slate-50" : "bg-white"}`}>
+      <div className="container mx-auto px-4 max-w-5xl">
+        <h2 className="text-4xl md:text-5xl font-semibold mb-10 tracking-tight text-center">
+          {title}
+        </h2>
+
+        <div className="text-xl md:text-2xl text-slate-700 leading-relaxed">
+          {children}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+  
+function List({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-5 text-lg">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3">
+          <CheckCircle className="w-6 h-6 text-green-600 mt-1" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   )
 }

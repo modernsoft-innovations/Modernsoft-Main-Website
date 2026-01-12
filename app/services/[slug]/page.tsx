@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, Check, Building2, ShoppingBag, Heart, GraduationCap, Briefcase, Home, Truck, PiggyBank, CreditCardIcon } from "lucide-react"
+import { ArrowLeft, Check, Building2, ShoppingBag, Heart, GraduationCap, Briefcase, Home, Truck, PiggyBank, CreditCardIcon, Rocket, Layout, User } from "lucide-react"
 import { ServiceFAQ } from "@/components/services/service-faq"
 import CTASection from "@/components/cta-section"
 import Image from "next/image"
@@ -26,539 +26,780 @@ const servicesData: Record<
     faqs: { question: string; answer: string }[]
   }
 
-  // customWebApplications
-> = {
-  "software-development": {
-    title: "Custom Software Development Services",
-    icon: "🌐",
-    img: "/software.png",
-    description: "Build powerful, scalable web applications tailored to your business needs",
-    overviewTitle: "What is Custom Software Development?",
-    overview:
-      "Custom software development involves creating web applications specifically designed to meet the unique requirements of your business. Unlike off-the-shelf solutions, custom software is built from the ground up to align with your workflows, processes, and goals. Our team of expert developers works closely with you to understand your needs and deliver a solution that drives efficiency, scalability, and growth. From initial concept and design to development, testing, and deployment, we handle every aspect of the software development lifecycle. Whether you need a customer portal, internal management system, or complex enterprise application, we leverage modern technologies and best practices to deliver high-quality software that gives you a competitive edge.",
-      whyimg: "/what-is-custom.png",
-    industries: [
-      {
-        name: "Enterprise & B2B",
-        icon: Building2,
-        description:
-          "ERP systems, CRM platforms, project management tools, and internal dashboards for large organizations",
-      },
-      {
-        name: "SaaS Platforms",
-        icon: Briefcase,
-        description: "Multi-tenant applications, subscription management, billing systems, and analytics dashboards",
-      },
-      {
-        name: "Education",
-        icon: GraduationCap,
-        description: "Learning management systems, student portals, online course platforms, and assessment tools",
-      },
-      {
-        name: "Healthcare",
-        icon: Heart,
-        description: "Patient management systems, telemedicine platforms, appointment scheduling, and health records",
-      },
-      {
-  name: "FinTech & Banking",
-  icon: CreditCardIcon,
+ 
+> = { 
+  
+  "website-development": {
+  title: "Website Design & Development",
+  icon: "🌐",
+  img: "/website-dev.png",
+
   description:
-    "Secure financial software including payment systems, accounting platforms, transaction management, and compliance-driven applications",
-},
-{
-  name: "Retail & eCommerce",
-  icon: ShoppingBag,
-  description:
-    "Inventory management, order processing systems, customer portals, and omnichannel retail software solutions",
-},
-{
-  name: "Real Estate & Property Management",
-  icon: Home,
-  description:
-    "Property management systems, tenant portals, CRM solutions, and real estate workflow automation",
-},
-{
-  name: "Logistics & Supply Chain",
-  icon: Truck,
-  description:
-    "Fleet management, shipment tracking, warehouse systems, and supply chain optimization software",
+    "Professional websites designed to build trust, attract customers, and grow your business online.",
+
+  overviewTitle: "What is Website Design & Development?",
+  overview:
+    "Website design and development focuses on creating professional, visually appealing, and user-friendly websites for businesses, agencies, and brands. These websites are built to represent your company online, communicate your services clearly, and convert visitors into customers. Unlike internal software systems, business websites prioritize branding, performance, SEO, and user experience. Whether you need a company profile, agency website, or marketing-focused landing page, we design and develop websites that are fast, secure, and easy to manage.",
+
+  whyimg: "/what-is-website.png",
+
+  industries: [
+    {
+      name: "Business Websites",
+      icon: Building2,
+      description:
+        "Company profiles, corporate websites, and professional online presence for businesses.",
+    },
+    {
+      name: "Agency Websites",
+      icon: Briefcase,
+      description:
+        "Websites for digital agencies, creative studios, and service-based companies.",
+    },
+    {
+      name: "Startup & Brand Websites",
+      icon: Rocket,
+      description:
+        "Modern websites for startups and brands to validate ideas and attract customers.",
+    },
+    {
+      name: "Landing Pages",
+      icon: Layout,
+      description:
+        "High-conversion landing pages for marketing campaigns and lead generation.",
+    },
+    {
+      name: "Portfolio & Personal Sites",
+      icon: User,
+      description:
+        "Personal websites and portfolios for professionals and creators.",
+    },
+  ],
+
+  benefits: [
+    {
+      title: "Strong First Impression",
+      description:
+        "A professionally designed website builds trust and credibility from the first visit.",
+    },
+    {
+      title: "SEO & Performance Optimized",
+      description:
+        "Fast-loading, SEO-friendly websites that rank better on search engines.",
+    },
+    {
+      title: "Mobile-Responsive Design",
+      description:
+        "Your website looks and works perfectly on mobile, tablet, and desktop devices.",
+    },
+    {
+      title: "Easy Content Management",
+      description:
+        "Manage your website content without technical knowledge.",
+    },
+  ],
+
+  process: [
+    { step: "Discovery", description: "Understand your business, audience, and goals" },
+    { step: "UI/UX Design", description: "Create clean, conversion-focused layouts" },
+    { step: "Development", description: "Build fast, secure, responsive websites" },
+    { step: "SEO Setup", description: "Optimize structure and performance" },
+    { step: "Launch", description: "Deploy and test across devices" },
+    { step: "Support", description: "Ongoing updates and maintenance" },
+  ],
+
+  technologies: [
+    { category: "Frontend", items: ["Next.js", "React", "HTML", "CSS", "Tailwind"] },
+    { category: "CMS", items: ["Headless CMS", "WordPress", "Custom CMS"] },
+    { category: "Hosting", items: ["Vercel", "Netlify", "cPanel"] },
+  ],
+
+  faqs: [
+    {
+      question: "Is this service for ERP or CRM systems?",
+      answer:
+        "No. This service is strictly for marketing and business websites, not internal software or dashboards.",
+    },
+    {
+      question: "Will my website be SEO-friendly?",
+      answer:
+        "Yes. All websites are built with SEO best practices and performance optimization.",
+    },
+    {
+      question: "Can I update content myself?",
+      answer:
+        "Yes. We provide easy-to-manage CMS options for non-technical users.",
+    },
+  ],
 },
 
-    ],
-    benefits: [
-      {
-        title: "Boost Operational Efficiency",
-        description:
-          "Automate manual processes and streamline workflows, reducing operational costs by up to 40% and freeing your team to focus on strategic initiatives.",
-      },
-      {
-        title: "Scale Without Limits",
-        description:
-          "Our applications grow with your business. Handle 10 users or 10 million with the same reliability and performance through cloud-native architecture.",
-      },
-      {
-        title: "Data-Driven Decision Making",
-        description:
-          "Real-time analytics and reporting dashboards give you instant insights into your business metrics, enabling faster and smarter decisions.",
-      },
-      {
-        title: "Enhanced Security & Compliance",
-        description:
-          "Enterprise-grade security with encryption, authentication, and compliance with GDPR, HIPAA, and industry standards to protect your data.",
-      },
-    ],
-    process: [
-      {
-        step: "Discovery & Planning",
-        description: "We analyze your requirements, define project scope, and create a detailed roadmap",
-      },
-      { step: "UI/UX Design", description: "Our designers create intuitive interfaces and engaging user experiences" },
-      {
-        step: "Development",
-        description: "Our developers build your application using best practices and modern technologies",
-      },
-      { step: "Testing & QA", description: "Rigorous testing ensures your application is bug-free and performs well" },
-      {
-        step: "Deployment",
-        description: "We deploy your application to production and ensure everything runs smoothly",
-      },
-      {
-        step: "Support & Maintenance",
-        description: "Ongoing support and updates to keep your application running perfectly",
-      },
-    ],
-    technologies: [
-      { category: "Frontend", items: ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS"] },
-      { category: "Backend", items: ["ASP.NET Core", "Node.js", "Laravel", "Django", "Express.js"] },
-      { category: "Database", items: ["SQL Server", "PostgreSQL", "MongoDB", "Redis"] },
-      { category: "Cloud", items: ["AWS", "Azure", "Vercel", "DigitalOcean"] },
-    ],
-    faqs: [
-      {
-        question: "How long does it take to build a custom web application?",
-        answer:
-          "Timeline depends on complexity and scope. Simple applications take 2-3 months, while complex enterprise systems can take 6-12 months. We provide detailed timelines during the discovery phase.",
-      },
-      {
-        question: "Can you integrate with our existing systems?",
-        answer:
-          "Yes, we specialize in integrating with existing systems and APIs. We can connect to your current databases, payment processors, CRM, and other business tools seamlessly.",
-      },
-      {
-        question: "What happens after the application is launched?",
-        answer:
-          "We provide ongoing support and maintenance including bug fixes, performance optimization, security updates, and new feature development based on your needs.",
-      },
-      {
-        question: "How do you ensure the application is secure?",
-        answer:
-          "We implement enterprise-grade security including encryption, secure authentication, regular security audits, and compliance with industry standards like GDPR and HIPAA.",
-      },
-      {
-        question: "Can the application scale as our business grows?",
-        answer:
-          "Absolutely. We build applications with scalability in mind using cloud-native architecture, microservices, and auto-scaling capabilities to handle growth.",
-      },
-      {
-        question: "What if we need to change requirements during development?",
-        answer:
-          "We use agile development methodology which allows for flexibility. We can accommodate reasonable changes and prioritize them in upcoming sprints.",
-      },
-    ],
-  },
+  // custom softwaredevelopment
+"software-development": {
+  title: "Custom Software Development",
+  icon: "🌐",
+  img: "/software.png",
+  description:
+    "Enterprise-grade custom software development services for ERP, CRM, SaaS platforms, and scalable business applications",
+
+  overviewTitle: "Custom Software Development for Businesses & Enterprises",
+  overview:
+    "Custom software development is the process of designing and building tailored software solutions that solve complex business challenges. Unlike generic software, custom-built systems such as ERP, CRM, and internal business applications are developed specifically to match your workflows, data structures, and operational goals. We help startups, enterprises, and growing businesses design, develop, and deploy secure, scalable, and high-performance software solutions. From requirement analysis and system architecture to development, testing, deployment, and long-term support, our team delivers reliable software that improves efficiency, automation, and decision-making across your organization.",
+  whyimg: "/what-is-custom.png",
+
+  industries: [
+    {
+      name: "Enterprise & B2B Solutions",
+      icon: Building2,
+      description:
+        "Enterprise software development including ERP systems, CRM platforms, workflow automation, internal dashboards, and business intelligence tools",
+    },
+    {
+      name: "SaaS Product Development",
+      icon: Briefcase,
+      description:
+        "Custom SaaS application development with multi-tenancy, subscription management, billing, analytics, and scalable cloud architecture",
+    },
+    {
+      name: "Education & eLearning",
+      icon: GraduationCap,
+      description:
+        "Learning management systems (LMS), student portals, online education platforms, assessments, and academic management software",
+    },
+    {
+      name: "Healthcare & Medical Software",
+      icon: Heart,
+      description:
+        "Healthcare software solutions including patient management systems, telemedicine platforms, appointment scheduling, and electronic health records",
+    },
+    {
+      name: "FinTech & Banking",
+      icon: CreditCardIcon,
+      description:
+        "Secure financial software development for payments, accounting systems, transaction processing, compliance, and fintech platforms",
+    },
+    {
+      name: "Retail & eCommerce Operations",
+      icon: ShoppingBag,
+      description:
+        "Retail management software including inventory systems, order management, customer portals, and omnichannel retail solutions",
+    },
+    {
+      name: "Real Estate & Property Management",
+      icon: Home,
+      description:
+        "Property management systems, real estate CRM software, tenant portals, lease tracking, and workflow automation",
+    },
+    {
+      name: "Logistics & Supply Chain",
+      icon: Truck,
+      description:
+        "Supply chain software solutions including fleet management, shipment tracking, warehouse systems, and logistics optimization tools",
+    },
+  ],
+
+  benefits: [
+    {
+      title: "Automate & Optimize Business Operations",
+      description:
+        "Replace manual processes with intelligent automation. Our custom software solutions reduce operational costs, errors, and inefficiencies across departments.",
+    },
+    {
+      title: "Scalable Enterprise Architecture",
+      description:
+        "We build software designed to scale as your business grows—supporting thousands of users, complex workflows, and high data volumes.",
+    },
+    {
+      title: "Real-Time Insights & Analytics",
+      description:
+        "Advanced reporting and analytics dashboards provide real-time business insights, enabling faster and smarter decision-making.",
+    },
+    {
+      title: "Security, Compliance & Reliability",
+      description:
+        "Enterprise-grade security with encryption, access control, and compliance with GDPR, HIPAA, and industry regulations.",
+    },
+  ],
+
+  process: [
+    {
+      step: "Requirement Analysis & Discovery",
+      description:
+        "We analyze your business needs, workflows, and goals to define a clear software development strategy",
+    },
+    {
+      step: "System Architecture & UI/UX Design",
+      description:
+        "Design scalable system architecture and intuitive user interfaces tailored for productivity and usability",
+    },
+    {
+      step: "Custom Software Development",
+      description:
+        "Develop secure, high-performance software using modern frameworks and best engineering practices",
+    },
+    {
+      step: "Testing & Quality Assurance",
+      description:
+        "Comprehensive testing ensures reliability, performance, and security across all use cases",
+    },
+    {
+      step: "Deployment & Integration",
+      description:
+        "Deploy to cloud or on-premise environments and integrate with existing systems seamlessly",
+    },
+    {
+      step: "Ongoing Support & Enhancement",
+      description:
+        "Continuous maintenance, performance optimization, feature upgrades, and long-term support",
+    },
+  ],
+
+  technologies: [
+    { category: "Frontend Technologies", items: ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS"] },
+    { category: "Backend Technologies", items: ["ASP.NET Core", "Node.js", "Laravel", "Django", "Express.js"] },
+    { category: "Databases", items: ["SQL Server", "PostgreSQL", "MongoDB", "Redis"] },
+    { category: "Cloud & DevOps", items: ["AWS", "Microsoft Azure", "Vercel", "DigitalOcean"] },
+  ],
+
+  faqs: [
+    {
+      question: "What types of software do you develop?",
+      answer:
+        "We develop ERP systems, CRM software, SaaS platforms, internal business tools, enterprise dashboards, and custom workflow automation software.",
+    },
+    {
+      question: "How long does custom software development take?",
+      answer:
+        "Project timelines depend on complexity. Small systems take 2–3 months, while large enterprise software may take 6–12 months or more.",
+    },
+    {
+      question: "Can you modernize or replace our existing software?",
+      answer:
+        "Yes. We specialize in legacy software modernization, system migration, and rebuilding outdated platforms with modern technologies.",
+    },
+    {
+      question: "Is custom software secure?",
+      answer:
+        "Absolutely. We implement best-in-class security practices including encryption, authentication, access control, and compliance standards.",
+    },
+    {
+      question: "Will the software scale as our business grows?",
+      answer:
+        "Yes. All software is built with scalability, performance, and future growth in mind using cloud-native architecture.",
+    },
+    {
+      question: "Do you provide long-term support?",
+      answer:
+        "Yes. We offer ongoing maintenance, updates, performance optimization, and feature enhancements after launch.",
+    },
+  ],
+},
+
 
   // mobile app development
-  "mobile-development": {
-    title: "Mobile App Development",
-    icon: "📱",
-    description: "Native and cross-platform mobile apps for iOS and Android",
-        
+"mobile-development": {
+  title: "Mobile App Development",
+  icon: "📱",
+  img: "/mobile-app-development.png",
+  description: "High-performance iOS & Android apps built for growth, engagement, and scalability",
 
-    overview:
-      "Create stunning mobile applications that your users will love. We develop both native and cross-platform apps using Flutter and React Native, ensuring your app performs beautifully on iOS and Android. From concept to App Store deployment, we handle every aspect of mobile app development with expertise and attention to detail.",
-    industries: [
-      {
-        name: "E-commerce & Retail",
-        icon: ShoppingBag,
-        description: "Shopping apps, product catalogs, mobile payments, loyalty programs, and order tracking",
-      },
-      {
-        name: "Health & Fitness",
-        icon: Heart,
-        description: "Workout tracking, nutrition apps, telemedicine, appointment booking, and wellness platforms",
-      },
-      {
-        name: "On-Demand Services",
-        icon: Briefcase,
-        description: "Food delivery, ride-sharing, home services, booking platforms, and marketplace apps",
-      },
-      {
-        name: "Social & Entertainment",
-        icon: Building2,
-        description: "Social networking, content sharing, streaming apps, gaming, and community platforms",
-      },
-    ],
-    benefits: [
-      {
-        title: "Reach Customers Anywhere",
-        description:
-          "Mobile apps put your business in your customers' pockets. With 85% of internet time spent on mobile, reach users where they are most engaged.",
-      },
-      {
-        title: "Increase Customer Engagement",
-        description:
-          "Push notifications, personalized content, and seamless experiences keep users coming back. Mobile apps see 3x higher engagement than mobile websites.",
-      },
-      {
-        title: "Build Brand Loyalty",
-        description:
-          "A well-designed app creates a direct channel to your customers, building stronger relationships and increasing lifetime value by up to 30%.",
-      },
-      {
-        title: "Unlock New Revenue Streams",
-        description:
-          "In-app purchases, subscriptions, and mobile-first features open new monetization opportunities that drive business growth.",
-      },
-    ],
-    process: [
-      { step: "Concept & Strategy", description: "Define your app's purpose, target audience, and key features" },
-      { step: "Design & Prototyping", description: "Create beautiful UI designs and interactive prototypes" },
-      { step: "Development", description: "Build your app with clean code and best practices" },
-      { step: "Testing", description: "Test on real devices to ensure quality and performance" },
-      { step: "App Store Submission", description: "Handle the submission process for both iOS and Android" },
-      { step: "Post-Launch Support", description: "Monitor performance and release updates as needed" },
-    ],
-    technologies: [
-      { category: "Mobile Frameworks", items: ["Flutter", "React Native", "Swift", "Kotlin"] },
-      { category: "Backend", items: ["Firebase", "Node.js", "ASP.NET Core", "GraphQL"] },
-      { category: "Database", items: ["SQLite", "Realm", "Firebase Firestore", "PostgreSQL"] },
-      { category: "Tools", items: ["Xcode", "Android Studio", "Fastlane", "TestFlight"] },
-    ],
-    faqs: [
-      {
-        question: "Should we build native or cross-platform apps?",
-        answer:
-          "Native apps offer best performance but require separate development for iOS and Android. Cross-platform (Flutter/React Native) is faster and more cost-effective. We recommend based on your specific needs.",
-      },
-      {
-        question: "How long does it take to launch an app?",
-        answer:
-          "Simple apps take 3-4 months, while feature-rich apps take 6-9 months. App Store review adds 1-2 weeks. We provide detailed timelines during planning.",
-      },
-      {
-        question: "What about app store approval and guidelines?",
-        answer:
-          "We handle the entire submission process and ensure your app complies with Apple and Google guidelines. We have experience navigating app store requirements.",
-      },
-      {
-        question: "Can we update the app after launch?",
-        answer:
-          "Yes, we provide ongoing support and can release updates regularly. We use CI/CD pipelines to streamline the update process.",
-      },
-      {
-        question: "How do you handle user data and privacy?",
-        answer:
-          "We implement industry-standard security practices including encryption, secure authentication, and compliance with GDPR and app store privacy requirements.",
-      },
-      {
-        question: "What analytics and tracking can we get?",
-        answer:
-          "We integrate analytics tools like Firebase Analytics, Mixpanel, or custom solutions to track user behavior, crashes, and performance metrics.",
-      },
-    ],
-  },
-  "ai-development": {
-    title: "AI & Machine Learning",
-    icon: "🤖",
-    description: "Integrate cutting-edge AI capabilities into your applications",
-    overview:
-      "Harness the power of artificial intelligence to transform your business. We integrate advanced AI capabilities including chatbots, natural language processing, computer vision, and predictive analytics. Using OpenAI, LangChain, and TensorFlow, we build intelligent systems that automate tasks, provide insights, and enhance user experiences.",
-    industries: [
-      {
-        name: "Customer Service",
-        icon: Heart,
-        description: "AI chatbots, virtual assistants, sentiment analysis, and automated support ticket routing",
-      },
-      {
-        name: "E-commerce",
-        icon: ShoppingBag,
-        description:
-          "Product recommendations, visual search, demand forecasting, and personalized shopping experiences",
-      },
-      {
-        name: "Healthcare",
-        icon: Heart,
-        description: "Medical image analysis, patient diagnosis assistance, drug discovery, and health monitoring",
-      },
-      {
-        name: "Finance & Legal",
-        icon: Briefcase,
-        description: "Document analysis, fraud detection, risk assessment, contract review, and compliance automation",
-      },
-    ],
-    benefits: [
-      {
-        title: "Reduce Operational Costs",
-        description:
-          "AI automation handles repetitive tasks 24/7, reducing support costs by up to 70% while improving response times from hours to seconds.",
-      },
-      {
-        title: "Enhance Customer Experience",
-        description:
-          "Provide instant, personalized responses to customer queries. AI-powered chatbots resolve 80% of common questions without human intervention.",
-      },
-      {
-        title: "Unlock Business Insights",
-        description:
-          "AI analyzes vast amounts of data to uncover patterns and trends humans might miss, enabling predictive analytics and smarter decision-making.",
-      },
-      {
-        title: "Stay Competitive",
-        description:
-          "Companies using AI see 50% faster growth. Implement AI now to gain a competitive advantage and future-proof your business.",
-      },
-    ],
-    process: [
-      { step: "Use Case Analysis", description: "Identify the best AI solutions for your specific needs" },
-      { step: "Data Preparation", description: "Collect and prepare data for training AI models" },
-      { step: "Model Development", description: "Build and train custom AI models or integrate existing APIs" },
-      { step: "Integration", description: "Integrate AI capabilities into your applications" },
-      { step: "Testing & Optimization", description: "Test and fine-tune models for optimal performance" },
-      { step: "Deployment & Monitoring", description: "Deploy to production and monitor performance" },
-    ],
-    technologies: [
-      { category: "AI Platforms", items: ["OpenAI GPT", "LangChain", "Anthropic Claude", "Google AI"] },
-      { category: "ML Frameworks", items: ["TensorFlow", "PyTorch", "Scikit-learn", "Hugging Face"] },
-      { category: "Backend", items: ["Python", "FastAPI", "Node.js", "Flask"] },
-      { category: "Cloud AI", items: ["AWS SageMaker", "Azure AI", "Google Cloud AI"] },
-    ],
-    faqs: [
-      {
-        question: "Do we need to train custom AI models or can we use existing APIs?",
-        answer:
-          "It depends on your needs. For most use cases, existing APIs like OpenAI GPT work great. Custom models are needed for specialized tasks with proprietary data.",
-      },
-      {
-        question: "How much data do we need to train an AI model?",
-        answer:
-          "For simple models, 1000-10000 examples work. Complex models need 100,000+ examples. We assess your data during the discovery phase.",
-      },
-      {
-        question: "What's the cost of implementing AI?",
-        answer:
-          "Costs vary based on complexity. API-based solutions start at $500-2000/month. Custom models cost $10,000-50,000+ depending on requirements.",
-      },
-      {
-        question: "How accurate are AI models?",
-        answer:
-          "Accuracy depends on data quality and model type. We typically achieve 85-95% accuracy for most business use cases. We provide accuracy metrics during testing.",
-      },
-      {
-        question: "Can AI models be updated and improved over time?",
-        answer:
-          "Yes, AI models improve with more data and feedback. We implement continuous learning systems that improve accuracy as they process more data.",
-      },
-      {
-        question: "What about AI bias and fairness?",
-        answer:
-          "We implement bias detection and mitigation strategies. We test models for fairness across different demographics and adjust as needed.",
-      },
-    ],
-  },
-  "ecommerce-solutions": {
-    title: "E-commerce Solutions",
-    icon: "🛒",
-    description: "Complete e-commerce platforms that convert visitors into customers",
-    overview:
-      "Build a powerful online store that drives sales and grows your business. We create complete e-commerce solutions with secure payment processing, inventory management, order tracking, and analytics. Whether you need a simple online store or a complex multi-vendor marketplace, we deliver solutions that are secure, scalable, and conversion-optimized.",
-    industries: [
-      {
-        name: "Retail & Fashion",
-        icon: ShoppingBag,
-        description: "Online stores, product catalogs, size guides, virtual try-on, and fashion marketplaces",
-      },
-      {
-        name: "Food & Beverage",
-        icon: Heart,
-        description: "Restaurant ordering, grocery delivery, meal kits, subscription boxes, and catering platforms",
-      },
-      {
-        name: "B2B Wholesale",
-        icon: Building2,
-        description: "Bulk ordering, tiered pricing, quote requests, account management, and distributor portals",
-      },
-      {
-        name: "Digital Products",
-        icon: Briefcase,
-        description: "Software licenses, online courses, ebooks, templates, and digital download platforms",
-      },
-    ],
-    benefits: [
-      {
-        title: "Increase Sales & Revenue",
-        description:
-          "Optimized checkout flows and conversion-focused design increase sales by 35%. Sell 24/7 without geographical limitations.",
-      },
-      {
-        title: "Reduce Cart Abandonment",
-        description:
-          "Streamlined checkout, multiple payment options, and trust signals reduce cart abandonment from 70% to under 40%.",
-      },
-      {
-        title: "Automate Operations",
-        description:
-          "Automated inventory management, order processing, and shipping integration save 20+ hours per week on manual tasks.",
-      },
-      {
-        title: "Scale Your Business",
-        description:
-          "Handle seasonal traffic spikes and business growth seamlessly. Our platforms support from 10 to 10,000+ orders per day.",
-      },
-    ],
-    process: [
-      { step: "Requirements Gathering", description: "Understand your products, target market, and business goals" },
-      { step: "Platform Selection", description: "Choose the best e-commerce platform for your needs" },
-      { step: "Design & Branding", description: "Create a beautiful store that reflects your brand" },
-      { step: "Development", description: "Build your store with all necessary features and integrations" },
-      { step: "Payment Setup", description: "Configure secure payment gateways and shipping options" },
-      { step: "Launch & Marketing", description: "Launch your store and implement marketing strategies" },
-    ],
-    technologies: [
-      { category: "Platforms", items: ["Custom Next.js", "WooCommerce", "Shopify", "Magento"] },
-      { category: "Payments", items: ["Stripe", "PayPal", "Square", "Razorpay"] },
-      { category: "Backend", items: ["Node.js", "ASP.NET Core", "Laravel", "PostgreSQL"] },
-      { category: "Tools", items: ["Inventory Management", "Shipping APIs", "Email Marketing", "Analytics"] },
-    ],
-    faqs: [
-      {
-        question: "Should we use Shopify or build a custom e-commerce platform?",
-        answer:
-          "Shopify is great for quick launches and simple stores. Custom platforms offer more flexibility and control. We recommend based on your specific needs and budget.",
-      },
-      {
-        question: "How do we handle payment processing securely?",
-        answer:
-          "We integrate with PCI-compliant payment gateways like Stripe and PayPal. All transactions are encrypted and secure. We never store credit card data.",
-      },
-      {
-        question: "Can we integrate with our existing inventory system?",
-        answer:
-          "Yes, we can integrate with most inventory management systems. Real-time sync ensures accurate stock levels across all channels.",
-      },
-      {
-        question: "How do we manage shipping and logistics?",
-        answer:
-          "We integrate with shipping providers like FedEx, UPS, and DHL. Customers get tracking information automatically.",
-      },
-      {
-        question: "What about abandoned cart recovery?",
-        answer:
-          "We implement automated email reminders for abandoned carts, which typically recover 10-15% of lost sales.",
-      },
-      {
-        question: "How do we optimize for conversions?",
-        answer:
-          "We implement A/B testing, optimize checkout flows, add trust signals, and use analytics to identify and fix conversion bottlenecks.",
-      },
-    ],
-  },
-  "cloud-services": {
-    title: "Cloud Services & DevOps",
-    icon: "☁️",
-    description: "Scalable cloud infrastructure and DevOps solutions",
-    overview:
-      "Deploy, monitor, and scale your applications with confidence. We provide comprehensive cloud services including infrastructure setup, CI/CD pipelines, auto-scaling, monitoring, and security. Whether you're on AWS, Azure, or Google Cloud, we ensure your applications run smoothly, scale automatically, and remain secure 24/7.",
-    industries: [
-      {
-        name: "SaaS Companies",
-        icon: Briefcase,
-        description: "Multi-tenant infrastructure, auto-scaling, high availability, and global deployment",
-      },
-      {
-        name: "E-commerce",
-        icon: ShoppingBag,
-        description: "Handle traffic spikes, CDN setup, database optimization, and payment processing infrastructure",
-      },
-      {
-        name: "Startups",
-        icon: Building2,
-        description: "Cost-effective infrastructure, rapid deployment, CI/CD pipelines, and scalable architecture",
-      },
-      {
-        name: "Enterprise",
-        icon: Building2,
-        description: "Cloud migration, hybrid cloud, disaster recovery, compliance, and enterprise security",
-      },
-    ],
-    benefits: [
-      {
-        title: "Reduce Infrastructure Costs",
-        description:
-          "Cloud optimization reduces infrastructure costs by 40-60%. Pay only for what you use with auto-scaling and right-sizing.",
-      },
-      {
-        title: "Improve Reliability",
-        description:
-          "99.9% uptime guarantee with automated failover, load balancing, and disaster recovery. Minimize downtime and revenue loss.",
-      },
-      {
-        title: "Deploy Faster",
-        description:
-          "CI/CD pipelines enable multiple deployments per day instead of per month. Ship features faster and respond to market changes quickly.",
-      },
-      {
-        title: "Scale Automatically",
-        description:
-          "Handle traffic spikes effortlessly. Auto-scaling adjusts resources in real-time, ensuring performance during peak demand.",
-      },
-    ],
-    process: [
-      { step: "Infrastructure Assessment", description: "Analyze your current setup and identify improvements" },
-      { step: "Architecture Design", description: "Design scalable and secure cloud architecture" },
-      { step: "Migration Planning", description: "Plan the migration strategy with minimal downtime" },
-      { step: "Implementation", description: "Set up cloud infrastructure and deploy applications" },
-      { step: "Automation", description: "Implement CI/CD pipelines and automation tools" },
-      { step: "Monitoring & Support", description: "Continuous monitoring and optimization" },
-    ],
-    technologies: [
-      { category: "Cloud Providers", items: ["AWS", "Microsoft Azure", "Google Cloud", "DigitalOcean"] },
-      { category: "DevOps Tools", items: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions"] },
-      { category: "Monitoring", items: ["CloudWatch", "Datadog", "New Relic", "Prometheus"] },
-      { category: "Infrastructure", items: ["Terraform", "Ansible", "CloudFormation", "Nginx"] },
-    ],
-    faqs: [
-      {
-        question: "Which cloud provider should we choose - AWS, Azure, or Google Cloud?",
-        answer:
-          "Each has strengths. AWS is most popular, Azure integrates well with Microsoft products, Google Cloud excels at data analytics. We recommend based on your tech stack.",
-      },
-      {
-        question: "How much will cloud infrastructure cost?",
-        answer:
-          "Costs vary based on usage. We optimize to reduce costs by 40-60%. Typical costs range from $500-5000/month depending on scale.",
-      },
-      {
-        question: "What about data security and compliance?",
-        answer:
-          "We implement encryption, secure authentication, regular backups, and compliance with GDPR, HIPAA, and SOC 2 standards.",
-      },
-      {
-        question: "How do we migrate from on-premise to cloud?",
-        answer:
-          "We plan migrations carefully to minimize downtime. We typically use a phased approach with parallel running during transition.",
-      },
-      {
-        question: "What's included in your DevOps support?",
-        answer:
-          "CI/CD pipelines, automated deployments, monitoring, alerting, performance optimization, and 24/7 support.",
-      },
-      {
-        question: "Can we scale automatically during traffic spikes?",
-        answer:
-          "Yes, we set up auto-scaling that automatically adds resources during high traffic and removes them when demand drops.",
-      },
-    ],
-  },
+  overviewTitle: "What is Mobile App Development?",
+  overview:
+    "Mobile app development is the process of designing, building, and maintaining applications for smartphones and tablets. Modernsoft Innovations create secure, fast, and user-friendly mobile apps that help businesses connect with customers, streamline operations, and unlock new revenue opportunities. From idea validation and UI/UX design to development, testing, and app store launch, we deliver end-to-end mobile solutions tailored to your goals. Whether you need a customer-facing app or a complex business solution, we ensure performance, scalability, and long-term success.",
+  whyimg: "/what-is-mobile-app.png",
+
+  industries: [
+    {
+      name: "Startups & SaaS",
+      icon: Building2,
+      description:
+        "MVP apps, SaaS companion apps, user onboarding, subscriptions, and analytics-driven mobile products",
+    },
+    {
+      name: "E-commerce & Retail",
+      icon: ShoppingBag,
+      description:
+        "Shopping apps, mobile payments, order tracking, loyalty programs, and personalized product experiences",
+    },
+    {
+      name: "Healthcare & Fitness",
+      icon: Heart,
+      description:
+        "Telemedicine apps, fitness tracking, appointment booking, patient portals, and wellness platforms",
+    },
+    {
+      name: "On-Demand Services",
+      icon: Briefcase,
+      description:
+        "Food delivery, ride-sharing, home services, booking systems, and real-time tracking apps",
+    },
+    {
+      name: "Education & Learning",
+      icon: GraduationCap,
+      description:
+        "E-learning apps, course platforms, quizzes, live classes, and student engagement tools",
+    },
+  ],
+
+  benefits: [
+    {
+      title: "Stronger Customer Engagement",
+      description:
+        "Mobile apps deliver personalized experiences, push notifications, and faster interactions—resulting in up to 3x higher engagement than mobile websites.",
+    },
+    {
+      title: "Faster Business Growth",
+      description:
+        "A well-built app helps you reach users instantly, improve retention, and increase customer lifetime value.",
+    },
+    {
+      title: "Cross-Platform Efficiency",
+      description:
+        "Using Flutter and React Native, we build apps that work seamlessly across iOS and Android while reducing development cost and time.",
+    },
+    {
+      title: "Secure & Scalable Architecture",
+      description:
+        "We build apps with enterprise-grade security, cloud scalability, and future-ready architecture.",
+    },
+  ],
+
+  process: [
+    {
+      step: "Idea Validation & Planning",
+      description:
+        "We analyze your idea, define features, and create a clear product roadmap",
+    },
+    {
+      step: "UI/UX Design",
+      description:
+        "Design intuitive, visually appealing interfaces focused on user experience",
+    },
+    {
+      step: "App Development",
+      description:
+        "Build robust mobile apps using clean code and modern frameworks",
+    },
+    {
+      step: "Testing & QA",
+      description:
+        "Extensive testing across devices to ensure performance, stability, and security",
+    },
+    {
+      step: "App Store Launch",
+      description:
+        "Publish your app on Apple App Store and Google Play with full compliance",
+    },
+    {
+      step: "Maintenance & Growth",
+      description:
+        "Ongoing updates, performance optimization, and feature enhancements",
+    },
+  ],
+
+  technologies: [
+    { category: "Mobile Frameworks", items: ["Flutter", "React Native", "Swift", "Kotlin"] },
+    { category: "Backend", items: ["Node.js", "ASP.NET Core", "Firebase", "GraphQL"] },
+    { category: "Databases", items: ["Firebase Firestore", "PostgreSQL", "MongoDB", "SQLite"] },
+    { category: "DevOps & Tools", items: ["Fastlane", "CI/CD", "App Store Connect", "Google Play Console"] },
+  ],
+
+  faqs: [
+    {
+      question: "Do you build apps for both Android and iOS?",
+      answer:
+        "Yes. We develop native apps as well as cross-platform apps that run smoothly on both Android and iOS devices.",
+    },
+    {
+      question: "How much does mobile app development cost?",
+      answer:
+        "Costs depend on features and complexity. Simple apps start from $3,000–$5,000, while advanced apps range higher. We provide transparent pricing after discovery.",
+    },
+    {
+      question: "Can you build an MVP first?",
+      answer:
+        "Absolutely. We specialize in MVP development to help startups validate ideas quickly and cost-effectively.",
+    },
+    {
+      question: "Will you handle app store submission?",
+      answer:
+        "Yes, we manage the entire submission process and ensure compliance with Apple and Google guidelines.",
+    },
+    {
+      question: "Do you provide post-launch support?",
+      answer:
+        "Yes. We offer ongoing maintenance, bug fixes, updates, and feature improvements.",
+    },
+    {
+      question: "Can the app scale as users grow?",
+      answer:
+        "Yes. Our apps are built with cloud-based, scalable architecture to support future growth.",
+    },
+  ],
+},
+
+
+// ----------------- ai development
+
+
+ "ai-development": {
+  title: "AI & Business Automation",
+  icon: "🤖",
+  img: "/ai-business.png",
+whyimg: "/what-is-ai-business.png",
+  description:
+    "AI-powered business automation solutions including chatbots, AI assistants, data intelligence, and workflow automation for modern companies.",
+
+  overviewTitle: "AI & Automation for Business Growth",
+  overview:
+    "Business AI and automation focus on using artificial intelligence to streamline operations, reduce manual work, and improve decision-making. We help businesses integrate practical AI solutions such as AI chatbots, virtual assistants, intelligent search, document automation, and predictive analytics. Unlike experimental AI, our solutions are designed for real business use—improving efficiency, customer experience, and profitability. From AI-powered customer support to internal automation and data intelligence, we design, build, and integrate AI systems that work seamlessly with your existing software and workflows.",
+
+  industries: [
+    {
+      name: "Customer Support & Sales",
+      icon: Heart,
+      description:
+        "AI chatbots, virtual assistants, lead qualification, automated customer support, and sentiment analysis",
+    },
+    {
+      name: "E-commerce & Online Businesses",
+      icon: ShoppingBag,
+      description:
+        "Product recommendations, AI search, personalized offers, demand forecasting, and customer behavior analysis",
+    },
+    {
+      name: "Business Operations & Admin",
+      icon: Briefcase,
+      description:
+        "Document processing, data extraction, workflow automation, internal AI tools, and reporting automation",
+    },
+    {
+      name: "Finance, Legal & Compliance",
+      icon: Building2,
+      description:
+        "AI-powered document review, fraud detection, risk analysis, contract automation, and compliance monitoring",
+    },
+  ],
+
+  benefits: [
+    {
+      title: "Automate Repetitive Business Tasks",
+      description:
+        "Reduce manual workload by automating customer support, data processing, and internal operations using AI-driven workflows.",
+    },
+    {
+      title: "Improve Customer Experience",
+      description:
+        "Provide instant, accurate, and personalized responses with AI chatbots and assistants available 24/7.",
+    },
+    {
+      title: "Make Data-Driven Decisions",
+      description:
+        "AI analyzes business data to deliver insights, predictions, and recommendations that support smarter decisions.",
+    },
+    {
+      title: "Scale Operations Without Hiring",
+      description:
+        "AI automation allows businesses to handle more customers and data without increasing operational costs.",
+    },
+  ],
+
+  process: [
+    { step: "Business Use Case Discovery", description: "Identify automation and AI opportunities in your business" },
+    { step: "Data & System Assessment", description: "Evaluate existing data, tools, and workflows" },
+    { step: "AI Solution Design", description: "Design practical AI systems aligned with business goals" },
+    { step: "Development & Integration", description: "Build and integrate AI into your existing software" },
+    { step: "Testing & Optimization", description: "Fine-tune accuracy, performance, and reliability" },
+    { step: "Deployment & Continuous Improvement", description: "Launch AI systems and improve them over time" },
+  ],
+
+  technologies: [
+    { category: "AI & LLM Platforms", items: ["OpenAI GPT", "LangChain", "Anthropic Claude", "Google Gemini"] },
+    { category: "Machine Learning", items: ["TensorFlow", "PyTorch", "Scikit-learn", "Hugging Face"] },
+    { category: "Backend & APIs", items: ["Python", "FastAPI", "Node.js", "Flask"] },
+    { category: "Cloud & AI Infrastructure", items: ["AWS", "Azure AI", "Google Cloud AI"] },
+  ],
+
+  faqs: [
+    {
+      question: "What types of businesses can use AI automation?",
+      answer:
+        "Almost any business can benefit—from startups and eCommerce stores to enterprises. AI is commonly used for customer support, sales automation, reporting, and internal workflows.",
+    },
+    {
+      question: "Do you build AI chatbots for websites and WhatsApp?",
+      answer:
+        "Yes. We build AI chatbots for websites, mobile apps, WhatsApp, and internal business systems.",
+    },
+    {
+      question: "Do we need large datasets to use AI?",
+      answer:
+        "Not always. Many business AI solutions use existing APIs like OpenAI and work well with minimal data. Custom models require more data.",
+    },
+    {
+      question: "Is AI expensive to implement?",
+      answer:
+        "Costs depend on complexity. Simple AI automation starts affordable, while advanced custom solutions require higher investment. We recommend cost-effective solutions based on your needs.",
+    },
+    {
+      question: "Can AI integrate with our existing software?",
+      answer:
+        "Yes. We integrate AI with CRMs, ERPs, websites, mobile apps, databases, and third-party tools.",
+    },
+    {
+      question: "Can AI solutions be improved over time?",
+      answer:
+        "Yes. We implement monitoring and continuous improvement so AI systems become smarter and more accurate over time.",
+    },
+  ],
+},
+
+
+
+// -------------ecommerce solutions
+ "ecommerce-solutions": {
+  title: "E-commerce Website Development",
+  icon: "🛒",
+  img: "/electro.png",
+  whyimg: "/what-is-website.png",
+  description:
+    "High-converting e-commerce websites designed to sell products, build trust, and grow online revenue",
+
+  overview:
+    "We design and develop modern e-commerce websites that help businesses sell online with confidence. From clean product pages and smooth checkout experiences to secure payments and mobile-first design, our e-commerce solutions focus on usability, performance, and conversions. Whether you're launching a new online store or upgrading an existing one, we build scalable, fast, and visually compelling shopping experiences that turn visitors into customers.",
+
+  industries: [
+    {
+      name: "Retail & Fashion Brands",
+      icon: ShoppingBag,
+      description:
+        "Online fashion stores, product catalogs, size guides, collections, seasonal campaigns, and brand-focused shopping experiences",
+    },
+    {
+      name: "Food & Beverage Businesses",
+      icon: Heart,
+      description:
+        "Restaurant ordering websites, specialty food stores, subscription boxes, coffee brands, and packaged food e-commerce",
+    },
+    {
+      name: "Small & Medium Businesses",
+      icon: Building2,
+      description:
+        "Local and global businesses selling physical products online with simple management and growth-ready stores",
+    },
+    {
+      name: "Digital Products & Services",
+      icon: Briefcase,
+      description:
+        "Websites for selling courses, ebooks, templates, design assets, memberships, and downloadable products",
+    },
+  ],
+
+  benefits: [
+    {
+      title: "Sell Online 24/7",
+      description:
+        "Your store works around the clock, allowing customers to browse and purchase anytime, from anywhere in the world.",
+    },
+    {
+      title: "Higher Conversion Rates",
+      description:
+        "Conversion-focused layouts, clear CTAs, fast loading speeds, and optimized checkout flows help increase sales.",
+    },
+    {
+      title: "Mobile-First Shopping Experience",
+      description:
+        "We design responsive e-commerce websites that look and perform perfectly on mobile, tablet, and desktop devices.",
+    },
+    {
+      title: "Easy Store Management",
+      description:
+        "Simple dashboards make it easy to manage products, prices, orders, and content without technical knowledge.",
+    },
+  ],
+
+  process: [
+    {
+      step: "Business & Product Discovery",
+      description:
+        "We understand your products, audience, competitors, and sales goals before planning the store structure.",
+    },
+    {
+      step: "UX & Store Design",
+      description:
+        "Design a clean, brand-aligned shopping experience focused on usability and trust.",
+    },
+    {
+      step: "Website Development",
+      description:
+        "Build the e-commerce website with fast performance, secure checkout, and scalable architecture.",
+    },
+    {
+      step: "Payment & Checkout Setup",
+      description:
+        "Integrate secure payment gateways and optimize checkout for minimal friction.",
+    },
+    {
+      step: "Testing & Optimization",
+      description:
+        "Test responsiveness, speed, usability, and purchasing flows across all devices.",
+    },
+    {
+      step: "Launch & Growth Support",
+      description:
+        "Launch your store smoothly and provide ongoing support for improvements and scaling.",
+    },
+  ],
+
+  technologies: [
+    {
+      category: "E-commerce Platforms",
+      items: ["Shopify", "WooCommerce", "Custom Next.js Storefront"],
+    },
+    {
+      category: "Frontend",
+      items: ["Next.js", "React", "Tailwind CSS"],
+    },
+    {
+      category: "Payments",
+      items: ["Stripe", "PayPal", "Local Payment Gateways"],
+    },
+    {
+      category: "Marketing & Growth Tools",
+      items: ["Email Automation", "Analytics", "SEO Optimization"],
+    },
+  ],
+
+  faqs: [
+    {
+      question: "Is this service only for online stores?",
+      answer:
+        "Yes. This service focuses purely on e-commerce websites designed to sell products online. It does not include ERP or CRM software development.",
+    },
+    {
+      question: "Should I choose Shopify or a custom e-commerce website?",
+      answer:
+        "Shopify is ideal for fast launches and ease of use. Custom e-commerce websites offer more design flexibility and performance control. We help you choose based on your business goals.",
+    },
+    {
+      question: "Will my e-commerce website be mobile-friendly?",
+      answer:
+        "Absolutely. Every store we build is fully responsive and optimized for mobile shopping experiences.",
+    },
+    {
+      question: "Can I manage products and orders myself?",
+      answer:
+        "Yes. We build user-friendly admin panels so you can easily manage products, pricing, images, and orders.",
+    },
+    {
+      question: "Do you optimize e-commerce websites for SEO?",
+      answer:
+        "Yes. We implement SEO best practices, fast loading speeds, and clean structures to help your store rank better on search engines.",
+    },
+    {
+      question: "Can you redesign my existing e-commerce website?",
+      answer:
+        "Yes. We can redesign or rebuild existing online stores to improve design, performance, and conversions.",
+    },
+  ],
+},
+
+  // "cloud-services": {
+  //   title: "Cloud Services & DevOps",
+  //   icon: "☁️",
+  //   description: "Scalable cloud infrastructure and DevOps solutions",
+  //   overview:
+  //     "Deploy, monitor, and scale your applications with confidence. We provide comprehensive cloud services including infrastructure setup, CI/CD pipelines, auto-scaling, monitoring, and security. Whether you're on AWS, Azure, or Google Cloud, we ensure your applications run smoothly, scale automatically, and remain secure 24/7.",
+  //   industries: [
+  //     {
+  //       name: "SaaS Companies",
+  //       icon: Briefcase,
+  //       description: "Multi-tenant infrastructure, auto-scaling, high availability, and global deployment",
+  //     },
+  //     {
+  //       name: "E-commerce",
+  //       icon: ShoppingBag,
+  //       description: "Handle traffic spikes, CDN setup, database optimization, and payment processing infrastructure",
+  //     },
+  //     {
+  //       name: "Startups",
+  //       icon: Building2,
+  //       description: "Cost-effective infrastructure, rapid deployment, CI/CD pipelines, and scalable architecture",
+  //     },
+  //     {
+  //       name: "Enterprise",
+  //       icon: Building2,
+  //       description: "Cloud migration, hybrid cloud, disaster recovery, compliance, and enterprise security",
+  //     },
+  //   ],
+  //   benefits: [
+  //     {
+  //       title: "Reduce Infrastructure Costs",
+  //       description:
+  //         "Cloud optimization reduces infrastructure costs by 40-60%. Pay only for what you use with auto-scaling and right-sizing.",
+  //     },
+  //     {
+  //       title: "Improve Reliability",
+  //       description:
+  //         "99.9% uptime guarantee with automated failover, load balancing, and disaster recovery. Minimize downtime and revenue loss.",
+  //     },
+  //     {
+  //       title: "Deploy Faster",
+  //       description:
+  //         "CI/CD pipelines enable multiple deployments per day instead of per month. Ship features faster and respond to market changes quickly.",
+  //     },
+  //     {
+  //       title: "Scale Automatically",
+  //       description:
+  //         "Handle traffic spikes effortlessly. Auto-scaling adjusts resources in real-time, ensuring performance during peak demand.",
+  //     },
+  //   ],
+  //   process: [
+  //     { step: "Infrastructure Assessment", description: "Analyze your current setup and identify improvements" },
+  //     { step: "Architecture Design", description: "Design scalable and secure cloud architecture" },
+  //     { step: "Migration Planning", description: "Plan the migration strategy with minimal downtime" },
+  //     { step: "Implementation", description: "Set up cloud infrastructure and deploy applications" },
+  //     { step: "Automation", description: "Implement CI/CD pipelines and automation tools" },
+  //     { step: "Monitoring & Support", description: "Continuous monitoring and optimization" },
+  //   ],
+  //   technologies: [
+  //     { category: "Cloud Providers", items: ["AWS", "Microsoft Azure", "Google Cloud", "DigitalOcean"] },
+  //     { category: "DevOps Tools", items: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions"] },
+  //     { category: "Monitoring", items: ["CloudWatch", "Datadog", "New Relic", "Prometheus"] },
+  //     { category: "Infrastructure", items: ["Terraform", "Ansible", "CloudFormation", "Nginx"] },
+  //   ],
+  //   faqs: [
+  //     {
+  //       question: "Which cloud provider should we choose - AWS, Azure, or Google Cloud?",
+  //       answer:
+  //         "Each has strengths. AWS is most popular, Azure integrates well with Microsoft products, Google Cloud excels at data analytics. We recommend based on your tech stack.",
+  //     },
+  //     {
+  //       question: "How much will cloud infrastructure cost?",
+  //       answer:
+  //         "Costs vary based on usage. We optimize to reduce costs by 40-60%. Typical costs range from $500-5000/month depending on scale.",
+  //     },
+  //     {
+  //       question: "What about data security and compliance?",
+  //       answer:
+  //         "We implement encryption, secure authentication, regular backups, and compliance with GDPR, HIPAA, and SOC 2 standards.",
+  //     },
+  //     {
+  //       question: "How do we migrate from on-premise to cloud?",
+  //       answer:
+  //         "We plan migrations carefully to minimize downtime. We typically use a phased approach with parallel running during transition.",
+  //     },
+  //     {
+  //       question: "What's included in your DevOps support?",
+  //       answer:
+  //         "CI/CD pipelines, automated deployments, monitoring, alerting, performance optimization, and 24/7 support.",
+  //     },
+  //     {
+  //       question: "Can we scale automatically during traffic spikes?",
+  //       answer:
+  //         "Yes, we set up auto-scaling that automatically adds resources during high traffic and removes them when demand drops.",
+  //     },
+  //   ],
+  // },
   "seo-marketing": {
     title: "SEO & Digital Marketing",
     icon: "📈",
@@ -761,7 +1002,7 @@ const serviceAliases: Record<string, keyof typeof servicesData> = {
   
   "software-development": "software-development",
   "websites-seo": "web-applications",
-  "website-development": "web-applications",
+  "website-development": "website-development",
   "ui-ux-design": "web-applications",
   "uiux": "web-applications",
 
@@ -848,20 +1089,20 @@ export default async function ServiceDetailPage({ params, searchParams }: Props)
   </div>
 
   <div className="container mx-auto px-4 relative z-10">
-    <Link
+    {/* <Link
       href="/services"
-      className="inline-flex items-center gap-2 text-black-500 hover:text-yellow-400 mb-12"
+      className="inline-flex items-center gap-2 text-black-500 hover:text-slate-400 mb-15"
     >
       <ArrowLeft className="w-4 h-4" />
       Back to Services
-    </Link>
+    </Link> */}
 
     {/* MAIN GRID */}
-    <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+    <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
       
       {/* LEFT — TEXT */}
       <div className="text-left">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-yellow-800 mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold text-black-800 mb-6">
 
           {service.title}
         </h1>
@@ -917,9 +1158,15 @@ export default async function ServiceDetailPage({ params, searchParams }: Props)
       <section className="py-20 bg-white">
   <div className="container mx-auto px-4">
     <div className="max-w-6xl mx-auto">
-      
-                 <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-10 text-center">
-What is {service.title}</h2>
+  <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-10 text-center leading-tight">
+    <span className="block text-lg sm:text-2xl font-semibold text-primary mb-2">
+      What is
+    </span>
+    <span className="block">
+      {service.title} Service
+    </span>
+  </h2>
+
 
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -1010,7 +1257,7 @@ Industries We Serve</h2>
               {service.benefits.map((benefit) => (
                 <Card key={benefit.title} className="p-8 border-2 border-slate-200 hover:shadow-lg transition-all">
                  <div className="flex items-start gap-3 mb-4 flex-wrap sm:flex-nowrap">
-                    <Check className="w-6 h-6 text-cyan-500 shrink-0 mt-1" />
+                    <Check className="w-6 h-6 text-orange-500 shrink-0 mt-1" />
                     <h3 className="text-xl font-bold text-slate-900">{benefit.title}</h3>
                   </div>
                   <p className="text-slate-700 leading-relaxed">{benefit.description}</p>
@@ -1088,7 +1335,7 @@ Industries We Serve</h2>
                   <h3 className="text-lg font-bold text-slate-900 mb-4">{tech.category}</h3>
                   <div className="flex flex-wrap gap-2">
                     {tech.items.map((item) => (
-                      <span key={item} className="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium">
+                      <span key={item} className="px-3 py-1 bg-yellow-500 text-black-700 rounded-full text-sm font-medium">
                         {item}
                       </span>
                     ))}

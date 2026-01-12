@@ -17,7 +17,7 @@ export default function SEOHead({
   ogType = "website",
   noindex = false,
 }: SEOHeadProps) {
-  const siteUrl = "https://modernsoft-innovations.com"
+  const siteUrl = "https://modernsoftinnovations.com"
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl
 
   return (

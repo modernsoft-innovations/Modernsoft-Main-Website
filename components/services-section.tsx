@@ -9,6 +9,8 @@ import {
   PenTool,
   ShieldCheck,
   ArrowRight,
+  ShoppingBag,
+  ShoppingCart,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -30,6 +32,13 @@ const services = [
     link: "/services/website-development",
   },
   {
+    title: "E-commerce Website Development",
+    description:
+      "High-converting e-commerce websites designed to sell products, build trust, and grow online revenue",
+    icon: ShoppingCart,
+    link: "/services/ecommerce",
+  },
+  {
     title: "Mobile App Development",
     description:
       "Android and iOS applications designed for performance, usability and growth.",
@@ -42,13 +51,6 @@ const services = [
       "Automate repetitive work using AI tools, chatbots and smart workflows.",
     icon: Brain,
     link: "/services/ai-automation",
-  },
-  {
-    title: "UI/UX Product Design",
-    description:
-      "Clean, user-focused designs that make your software easy to use and scale.",
-    icon: PenTool,
-    link: "/services/uiux",
   },
   {
     title: "QA & Software Testing",
@@ -75,7 +77,7 @@ export default function ServicesSection() {
             Our Services
           </h2>
           <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
-            Practical software solutions built for real businesses — not buzzwords.
+            Practical solutions built for real businesses.
           </p>
         </motion.div>
 

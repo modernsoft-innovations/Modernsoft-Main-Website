@@ -99,7 +99,7 @@ export default function HeroSection() {
                 variant="outline"
                 className="border-2 bg-yellow-400 hover:bg-white-400 text-black text-lg px-8 py-6 rounded-lg bg-transparent"
               >
-                View Our Work
+                View Our Works
               </Button>
             </Link>
           </motion.div>
@@ -111,7 +111,7 @@ export default function HeroSection() {
             transition={{ delay: 0.7 }}
             className="text-gray-600 text-base mb-12"
           >
-            Trusted by businesses in 5+ countries
+            {/* Trusted by businesses in 5+ countries */}
           </motion.p>
 
           {/* Tech stack showcase */}

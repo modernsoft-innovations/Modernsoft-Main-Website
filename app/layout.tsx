@@ -77,11 +77,11 @@ export const metadata: Metadata = {
     title:
       "Modernsoft Innovations – Global Software Development Partner",
     description:
-      "Enterprise-grade software solutions with 30+ engineers. We build scalable web, mobile & AI products for global businesses.",
+      "Enterprise-grade software solutions. We build scalable web, mobile & AI products for global businesses.",
 
     images: [
       {
-        url: "https://modernsoftinnovations.com/og-image.jpg",
+        url: "https://modernsoftinnovations.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Modernsoft Innovations – Software Development Company",
@@ -90,17 +90,14 @@ export const metadata: Metadata = {
   },
 
   twitter: {
-    card: "summary_large_image",
-    title:
-      "Modernsoft Innovations – Custom Software & AI Development",
-    description:
-      "Global software development partner delivering web, mobile & AI solutions.",
-    images: ["https://modernsoftinnovations.com/og-image.jpg"],
-  },
+  card: "summary_large_image",
+  title:
+    "Custom Software Development Company – Modernsoft Innovations",
+  description:
+    "We help startups and enterprises build scalable web, mobile and AI-powered software solutions worldwide.",
+  images: ["https://modernsoftinnovations.com/og-image.png"],
+},
 
-  verification: {
-    google: "ADD_GOOGLE_SEARCH_CONSOLE_CODE",
-  },
 }
 
 export default function RootLayout({

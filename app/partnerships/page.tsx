@@ -6,112 +6,91 @@ import { Button } from "@/components/ui/button"
 import { Check, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-/* ORDER: 
-1. White Label
-2. Team Extension
-3. Project Based
-*/
-
 const models = [
   {
-  id: "white-label",
-  title: "White Label Partnership",
-  description:
-    "We work silently behind the scenes while you sell software services under your own brand. Your clients see you — we handle all development.",
-  image: "/white-label.png",
-  bestFor: [
-    "Digital & marketing agencies",
-    "IT consultants and freelancers",
-    "Businesses wanting to offer software without building a tech team",
-  ],
-  howItWorks: [
-    "You sell projects to your clients",
-    "We design and develop the software",
-    "Everything is delivered under your brand name",
-    "You stay in full control of client communication",
-  ],
-  timeline: "Long-term or project-based partnership",
-  cta: "Become a White Label Partner",
-}
-,
- {
-  id: "team-extension",
-  title: "Team Extension (Staff Augmentation)",
-  description:
-    "Hire skilled developers from our team to work as part of your in-house team. You manage priorities — we provide the talent.",
-  image: "/TeamExtension.png",
-  bestFor: [
-    "Companies with an existing tech team",
-    "Startups scaling fast",
-    "Businesses needing extra developers without hiring full-time staff",
-  ],
-  howItWorks: [
-    "You tell us the skills and experience you need",
-    "We assign dedicated developers to your team",
-    "They work with your tools, process, and timezone",
-    "You pay monthly with full flexibility",
-  ],
-  timeline: "Monthly engagement — cancel or scale anytime",
-  cta: "Extend Your Development Team",
-}
-,
+    id: "white-label",
+    title: "White Label Partnership",
+    description:
+      "Deliver software solutions under your own brand while we work silently in the background. You own the client relationship — we handle design, development, and delivery as your invisible engineering team.",
+    image: "/white-label.png",
+    bestFor: [
+      "Digital & marketing agencies offering software services",
+      "IT consultants and freelancers serving multiple clients",
+      "Businesses selling software solutions without an internal tech team",
+    ],
+    howItWorks: [
+      "You sell software projects under your brand",
+      "We design, develop, and test the solution",
+      "All deliverables are provided without our branding",
+      "You manage clients — we stay invisible",
+    ],
+    timeline: "Long-term or project-based engagement",
+    rate: "USD $18–$40 per hour",
+    cta: "Become a White Label Partner",
+  },
   {
-  id: "project-based",
-  title: "Project-Based Development",
-  description:
-    "We handle your entire software project from idea to launch with a fixed scope, timeline, and budget.",
-  image: "/fixedbudget.png",
-  bestFor: [
-    
-    "Businesses with clear requirements",
-    "Startups building MVPs",
-    "Companies wanting predictable cost and delivery",
-  ],
-  howItWorks: [
-    "You share your idea or requirements",
-    "We define scope, timeline, and fixed price",
-    "Development happens in milestones with regular updates",
-    "You receive full ownership of the final product",
-  ],
-  timeline: "Typically 4–16 weeks",
-  cta: "Start Your Project",
-}
-,
+    id: "team-extension",
+    title: " Staff Augmentation (Offshore Developers)",
+    description:
+      "Scale your development capacity without long-term hiring risk. Our engineers integrate seamlessly with your in-house team, tools, and workflows.",
+    image: "/TeamExtension.png",
+    bestFor: [
+      "Companies with an existing technical team",
+      "Startups scaling product development",
+      "Organizations needing specific skills on demand",
+    ],
+    howItWorks: [
+      "You define required skills and availability",
+      "We assign vetted developers matched to your needs",
+      "Developers work directly with your team and tools",
+      "You can scale up, down, or pause anytime",
+    ],
+    timeline: "Monthly engagement — fully flexible",
+    rate: "USD $18–$40 per hour",
+    cta: "Extend Your Development Team",
+  },
+  {
+    id: "project-based",
+    title: "Project-Based Development",
+    description:
+      "End-to-end software development delivered with a clearly defined scope, timeline, and budget — ideal for predictable outcomes.",
+    image: "/fixedbudget.png",
+    bestFor: [
+      "Businesses with clearly defined requirements",
+      "Startups building MVPs or prototypes",
+      "Companies seeking fixed cost and delivery timelines",
+    ],
+    howItWorks: [
+      "You share your idea or documentation",
+      "We define scope, timeline, and fixed pricing",
+      "Development runs in milestones with regular updates",
+      "You receive full source code and ownership",
+    ],
+    timeline: "Typically 4–16 weeks",
+    rate: "Calculated using USD $18–$40 per hour",
+    cta: "Start Your Project",
+  },
 ]
 
 export default function PartnershipsPage() {
   return (
     <main className="bg-white">
-      {/* HERO */}
-      <section className="pt-32 pb-28 bg-[#0B1E3C] text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Collaboration Models
-            </h1>
-            <p className="text-xl text-blue-100 mb-8">
-              Offshore development, white-label delivery, and scalable engineering
-              teams — built for global partners.
-            </p>
 
-            <Link href="/contact">
-              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black">
-                Book a Strategy Call
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
+      {/* HERO */}
+      <section className="pt-32 pb-28 bg-[#0B1E3C] text-white text-center">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          Collaboration Models
+        </h1>
+        <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          Flexible engagement models designed for agencies, startups, and
+          technology-driven businesses worldwide.
+        </p>
       </section>
 
       {/* MODELS */}
       <section className="py-24">
-        <div className="container mx-auto px-4 space-y-24">
+        <div className="container mx-auto px-4 space-y-32">
+
           {models.map((model, index) => (
             <motion.div
               key={model.id}
@@ -126,9 +105,20 @@ export default function PartnershipsPage() {
                 <h2 className="text-4xl font-bold text-slate-800 mb-4">
                   {model.title}
                 </h2>
+
                 <p className="text-xl text-slate-600 mb-8">
                   {model.description}
                 </p>
+
+                {/* MOBILE IMAGE */}
+                <div className="relative h-64 rounded-xl overflow-hidden shadow-lg mb-10 lg:hidden">
+                  <Image
+                    src={model.image}
+                    alt={model.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
 
                 <h3 className="font-semibold mb-3">Best For</h3>
                 <ul className="space-y-2 mb-8">
@@ -153,9 +143,11 @@ export default function PartnershipsPage() {
                 </ol>
 
                 <div className="mb-8 p-4 bg-sky-50 border border-sky-200 rounded-lg">
-                  <strong>Timeline:</strong> {model.timeline}
+                  <p><strong>Timeline:</strong> {model.timeline}</p>
+                  <p><strong>Rate:</strong> {model.rate}</p>
                 </div>
 
+                {/* MODEL CTA */}
                 <Link href="/contact">
                   <Button className="bg-yellow-500 hover:bg-yellow-600 text-black">
                     {model.cta}
@@ -164,9 +156,9 @@ export default function PartnershipsPage() {
                 </Link>
               </div>
 
-              {/* IMAGE */}
+              {/* DESKTOP IMAGE */}
               <div
-                className={`relative h-96 rounded-2xl overflow-hidden shadow-xl ${
+                className={`relative h-96 rounded-2xl overflow-hidden shadow-xl hidden lg:block ${
                   index % 2 === 1 ? "lg:order-1" : ""
                 }`}
               >
@@ -179,59 +171,26 @@ export default function PartnershipsPage() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </section>
 
-      {/* COMPARISON */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
-            Comparison Table
-          </h2>
-
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl shadow-lg">
-              <thead className="bg-[#0B1E3C] text-white">
-                <tr>
-                  <th className="px-6 py-4 text-left">Feature</th>
-                  <th className="px-6 py-4 text-left">Project-Based</th>
-                  <th className="px-6 py-4 text-left">Team Extension</th>
-                  <th className="px-6 py-4 text-left">White Label</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y">
-                <tr>
-                  <td className="px-6 py-4 font-semibold">Commitment</td>
-                  <td className="px-6 py-4">Per project</td>
-                  <td className="px-6 py-4">Monthly</td>
-                  <td className="px-6 py-4">Flexible</td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 font-semibold">Pricing</td>
-                  <td className="px-6 py-4">Fixed</td>
-                  <td className="px-6 py-4">Monthly rate</td>
-                  <td className="px-6 py-4">Negotiable</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
       </section>
 
       {/* FINAL CTA */}
       <section className="py-24 bg-[#0B1E3C] text-white text-center">
         <h2 className="text-4xl font-bold mb-4">
-          Not sure which model fits you?
+          Not sure which model fits your business?
         </h2>
         <p className="text-blue-100 mb-8">
-          Book a 15-minute call and let’s decide the smartest path.
+          Book a free strategy call and let’s choose the smartest approach.
         </p>
         <Link href="/contact">
           <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black">
-            Schedule Call
+            Book a Strategy Call
+            <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </Link>
       </section>
+
     </main>
   )
 }

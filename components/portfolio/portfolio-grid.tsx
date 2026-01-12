@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import {
   ShoppingCart,
@@ -10,6 +11,7 @@ import {
   ClipboardList,
   GraduationCap,
   CreditCard,
+  LucideIcon,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -23,7 +25,7 @@ type Project = {
   category: string
   location: string
   year: string
-  icon: any
+  icon: LucideIcon
   image?: string | null
   description: string
 }
@@ -31,7 +33,7 @@ type Project = {
 const projects: Project[] = [
   {
     slug: "megamart-ecommerce",
-    title: "megamart-ecommerce",
+    title: "MegaMart",
     subtitle: "Multi-category eCommerce Platform",
     category: "E-commerce",
     location: "Australia",
@@ -43,7 +45,7 @@ const projects: Project[] = [
   },
   {
     slug: "electrohub",
-    title: "electrohub",
+    title: "ElectroHub",
     subtitle: "Electronics Online Store",
     category: "E-commerce",
     location: "USA",
@@ -55,11 +57,11 @@ const projects: Project[] = [
   },
   {
     slug: "paperless-smes",
-    title: "paperless-smes",
+    title: "Paperless SMEs",
     subtitle: "Business Management Software",
-    category: "ERP / SME",
+    category: "Enterprise",
     location: "Bangladesh",
-    year: "2024",
+    year: "2026",
     icon: Briefcase,
     image: "/paperless.png",
     description:
@@ -67,59 +69,59 @@ const projects: Project[] = [
   },
   {
     slug: "cafe-website",
-    title: "cafe-website",
+    title: "Cafe Website",
     subtitle: "Restaurant Marketing Website",
-    category: "Website",
+    category: "Web",
     location: "Australia",
-    year: "2024",
+    year: "2025",
     icon: Utensils,
     image: "/cafe-website.jpg",
     description:
       "SEO-optimized cafe website designed to increase reservations and walk-ins.",
   },
   {
-    slug: "Automobile Servicing System",
-    title: "Automobile Servicing System",
-    subtitle: "Online Booking Platform",
-    category: "Business Software",
-    location: "Bangladesh",
-    year: "2024",
-    icon: Car,
-    image: "/bike-servicing-slot-booking.jpg",
-    description:
-      "Online service booking and job management system for automobile workshops.",
-  },
-  {
-    slug: "Restaurant Management System",
+    slug: "restaurant-management-system",
     title: "Restaurant Management System",
     subtitle: "Order & Operations Management",
-    category: "Business Software",
+    category: "Enterprise",
     location: "Bangladesh",
-    year: "2024",
+    year: "2025",
     icon: ClipboardList,
     image: "/restaurant-management.jpg",
     description:
       "System for managing orders, tables, staff and daily sales reports.",
   },
   {
-    slug: "Coaching Center Management",
+    slug: "automobile-servicing-system",
+    title: "Automobile Servicing System",
+    subtitle: "Online Booking Platform",
+    category: "Enterprise",
+    location: "Bangladesh",
+    year: "2026",
+    icon: Car,
+    image: "/bike-servicing-slot-booking.jpg",
+    description:
+      "Online service booking and job management system for automobile workshops.",
+  },
+  {
+    slug: "coaching-center-management",
     title: "Coaching Center Management",
     subtitle: "Education Management System",
-    category: "Education",
+    category: "Enterprise",
     location: "Bangladesh",
-    year: "2024",
+    year: "2026",
     icon: GraduationCap,
-    image: null, // intentionally no image
+    image: null,
     description:
       "Manages students, batches, attendance, fees and teacher records.",
   },
   {
     slug: "pos-system",
-    title: "pos-system",
+    title: "POS System",
     subtitle: "Retail Billing Software",
-    category: "POS",
+    category: "Enterprise",
     location: "Bangladesh",
-    year: "2024",
+    year: "2025",
     icon: CreditCard,
     image: "/pos-system-interface.jpg",
     description:
@@ -127,43 +129,77 @@ const projects: Project[] = [
   },
 ]
 
+const categories = [
+  "All",
+  "Web",
+  "E-commerce",
+  "Enterprise",
+  "Mobile",
+  "AI/ML",
+  "Cloud",
+]
+
 export default function ProjectsSection() {
+  const [activeCategory, setActiveCategory] = useState("All")
+
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory)
+
   return (
-    <section className="py-24 bg-[#0B1C2D]">
+    <section className="py-24 bg-[#ffffff5b]">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <motion.div
+
+        {/* HEADER */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-black">
             Projects We’ve Built
           </h2>
-          <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
-            Real business solutions — focused on management systems, automation
-            and growth.
+          <p className="mt-4 text-slate-800 max-w-2xl mx-auto">
+            Real business solutions focused on automation, management and growth.
           </p>
-        </motion.div>
+        </motion.div> */}
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => {
+        {/* CATEGORY FILTER */}
+        <div className="flex gap-3 justify-start md:justify-center mb-14 overflow-x-auto pb-2">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all
+                ${
+                  activeCategory === cat
+                    ? "bg-yellow-400 text-black shadow-md"
+                    : "bg-white text-slate-700 hover:bg-yellow-100"
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* GRID */}
+        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => {
             const Icon = project.icon
 
             return (
               <motion.div
                 key={project.slug}
+                layout
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35 }}
               >
                 <Card className="h-full bg-[#12263F] border border-white/10 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
-                  {/* Image or Icon fallback */}
-                  <div className="h-44 w-full bg-[#0F2238] flex items-center justify-center">
+                  <div className="h-44 bg-[#0F2238] flex items-center justify-center">
                     {project.image ? (
                       <Image
                         src={project.image}
@@ -177,7 +213,6 @@ export default function ProjectsSection() {
                     )}
                   </div>
 
-                  {/* Content */}
                   <div className="p-6 flex flex-col h-full">
                     <h3 className="text-xl font-semibold text-white">
                       {project.title}
@@ -191,12 +226,12 @@ export default function ProjectsSection() {
                       {project.description}
                     </p>
 
-                    <div className="mt-4 flex items-center justify-between text-xs text-slate-400">
+                    <div className="mt-4 flex justify-between text-xs text-slate-400">
                       <span>{project.location}</span>
                       <span>{project.year}</span>
                     </div>
 
-                    <Link href={`/portfolio/${project.title}`} className="mt-5">
+                    <Link href={`/portfolio/${project.slug}`} className="mt-5">
                       <Button
                         variant="ghost"
                         className="p-0 text-yellow-400 hover:text-yellow-300 font-semibold"
@@ -209,7 +244,7 @@ export default function ProjectsSection() {
               </motion.div>
             )
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

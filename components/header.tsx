@@ -18,10 +18,10 @@ const serviceMegaMenu = {
   ],
   services: [
     { name: "Website Design & Development", href: "/services/website-development" },
-    { name: "Custom Software Development", href: "/services/software-development" },
+    { name: "Software Development", href: "/services/software-development" },
+    { name: "E-commerce Solution", href: "/services/ecommerce" },
     { name: "Mobile App Development", href: "/services/mobile-app" },
     { name: "AI & Business Automation", href: "/services/ai-automation" },
-    { name: "UI/UX Design", href: "/services/uiux" },
     { name: "QA & Automation Testing", href: "/services/software-testing" },
   ],
 }
@@ -55,7 +55,7 @@ export default function Header() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden md:flex items-center gap-8 font-bold">
+          <nav className="hidden md:flex items-center gap-8 font-normal">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
 
@@ -75,13 +75,13 @@ export default function Header() {
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 12 }}
-                    className="absolute left-1/2 -translate-x-1/2 mt-6 w-[1000px] rounded-2xl bg-[#0B1C2D] p-8 shadow-2xl"
+                    className="absolute left-1/2 -translate-x-1/2 mt-6 w-[1000px] rounded-2xl bg-[#ffffff] p-8 shadow-2xl"
                   >
                     <p className="text-white font-semibold mb-6">
                       {serviceMegaMenu.tagline}
                     </p>
 
-                    <div className="grid grid-cols-2 gap-10 text-white">
+                    <div className="grid grid-cols-2 gap-10 text-slate-800">
                       <div>
                         <h4 className="mb-4 font-bold text-orange-400">
                           Services
@@ -90,7 +90,7 @@ export default function Header() {
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="block py-1.5 text-sm hover:text-orange-300"
+                            className="block py-1.5 text-1xl hover:text-orange-300"
                           >
                             → {item.name}
                           </Link>
@@ -111,7 +111,7 @@ export default function Header() {
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="block py-1.5 text-sm hover:text-orange-300"
+                            className="block py-1.5 text-1xl hover:text-orange-300"
                           >
                             → {item.name}
                           </Link>
@@ -124,8 +124,9 @@ export default function Header() {
             </div>
 
             <Link href="/portfolio">Portfolio</Link>
-            <Link href="/blog">Blog</Link>
+            <Link href="/careers">Career</Link>
             <Link href="/contact">Contact</Link>
+            <Link href="/blog">Blog</Link>
 
             <a
               href="https://calendly.com/sadmansakib4112/30min"
@@ -155,7 +156,7 @@ export default function Header() {
       exit={{ opacity: 0, y: -12 }}
       className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t"
     >
-      <nav className="px-6 py-6 space-y-6 font-semibold">
+      <nav className="px-8 py-8 space-y-8 font-light">
 
         <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link><br />
         <Link href="/about" onClick={() => setMobileOpen(false)}>About</Link>
@@ -194,8 +195,9 @@ export default function Header() {
         </Link>
 
         <Link href="/portfolio" onClick={() => setMobileOpen(false)}>Portfolio</Link><br />
+        <Link href="/careers" onClick={() => setMobileOpen(false)}>Career</Link><br />
+        <Link href="/contact" onClick={() => setMobileOpen(false)}>Contact</Link><br />
         <Link href="/blog" onClick={() => setMobileOpen(false)}>Blog</Link><br />
-        <Link href="/contact" onClick={() => setMobileOpen(false)}>Contact</Link>
 
         <a
           href="https://calendly.com/sadmansakib4112/30min"

@@ -8,10 +8,15 @@ import IndustriesSection from "@/components/industries-section"
 import TestimonialsSection from "@/components/testimonials-section"
 import CTASection from "@/components/cta-section"
 import StructuredData from "@/components/structured-data"
+import CollaborationModels from "@/components/CollaborationModels"
+import DevelopmentProcess from "@/components/DevelopmentProcess"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import WhatWeBuiltSection from "@/components/WhatWeBuiltSection"
+import ScrollStack from "@/components/scroll-stack"
 
 export const metadata: Metadata = {
   title:
-    "Global Software Development Company | Specializing in web, mobile, AI and enterprise solutions.",
+    "Global Software Development Company | Web, Mobile & AI Solutions | Modernsoft Innovations",
   description:
     "Looking for a reliable software development partner? Modernsoft Innovations builds high-performance web, mobile & AI solutions for startups and enterprises worldwide.",
 
@@ -22,7 +27,7 @@ export const metadata: Metadata = {
       "We help startups and enterprises build scalable software products using modern web, mobile and AI technologies.",
     images: [
       {
-        url: "https://modernsoftinnovations.com/og-image.jpg",
+        url: "https://modernsoftinnovations.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Modernsoft Innovations Software Team",
@@ -48,12 +53,27 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   serviceType: "Software Development",
-  provider: {
-    "@type": "Organization",
-    name: "Modernsoft Innovations",
-  },
-  areaServed: ["US", "UK", "AU", "BD", "CANADA", "GLOBAL", "GERMANY", "NEW ZEALAND", 
-    "SOUTH AFRICA", "SWITZERLAND", "UNITED ARAB EMIRATES"," SINGAPORE"],
+ provider: {
+  "@type": "Organization",
+  name: "Modernsoft Innovations",
+  url: "https://modernsoftinnovations.com",
+},
+
+  areaServed: [
+  "United States",
+  "United Kingdom",
+  "Australia",
+  "Canada",
+  "Germany",
+  "Singapore",
+  "United Arab Emirates",
+  "Switzerland",
+  "New Zealand",
+  "South Africa",
+  "Bangladesh",
+  "Global",
+],
+
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Software Development Services",
@@ -89,14 +109,20 @@ export default function HomePage() {
       <StructuredData data={organizationSchema} />
       <StructuredData data={serviceSchema} />
       <main className="min-h-screen">
-        <HeroSection />
-        <ServicesSection />
-        <TechStackSection />
-        <IndustriesSection />
-        <WhyChooseUsSection />
-        <StatsSection />
-        <TestimonialsSection />
-        <CTASection />
+      <HeroSection />
+      
+      <WhatWeBuiltSection />
+<ServicesSection />
+<CollaborationModels />
+<DevelopmentProcess />
+
+<StatsSection />
+<IndustriesSection />
+<TechStackSection />
+<TestimonialsSection />
+<WhyChooseUsSection />
+<CTASection />
+<ScrollToTop />
       </main>
     </>
   )
