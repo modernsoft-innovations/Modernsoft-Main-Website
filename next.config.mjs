@@ -6,6 +6,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -16,22 +17,36 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
-  compress: false, // Disable compression to reduce memory usage
+
+  compress: false,
   poweredByHeader: false,
   reactStrictMode: true,
-  // Reduce memory usage during build and runtime
+
   experimental: {
-    // Reduce memory footprint
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-    // Disable memory-intensive features
+    optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
     serverActions: {
-      bodySizeLimit: '1mb',
+      bodySizeLimit: "1mb",
     },
   },
-  // Don't use standalone for cPanel - it changes the build structure
-  // output: 'standalone', // Commented out for cPanel compatibility
-  // Reduce memory usage in production
+
   productionBrowserSourceMaps: false,
+
+  // ✅ ADD THIS PART (IMPORTANT FOR LINKEDIN + SEO)
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "modernsoftinnovations.com",
+          },
+        ],
+        destination: "https://www.modernsoftinnovations.com/:path*",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig
