@@ -26,6 +26,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://modernsoftinnovations.com"),
+  
 
   title: {
     default:
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
   publisher: "Modernsoft Innovations",
 
   alternates: {
-    canonical: "https://modernsoftinnovations.com",
+    canonical: "/",
   },
 
   robots: {
