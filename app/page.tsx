@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "We help startups and enterprises build scalable software products using modern web, mobile and AI technologies.",
     images: [
       {
-        url: "https://modernsoftinnovations.com/og-image.png",
+        url: "https://www.modernsoftinnovations.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Modernsoft Innovations Software Team",
@@ -40,8 +40,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Modernsoft Innovations",
-  url: "https://modernsoftinnovations.com",
-  logo: "https://modernsoftinnovations.com/logo.png",
+  url: "https://www.modernsoftinnovations.com",
+  logo: "https://www.modernsoftinnovations.com/logo.png",
   description:
     "Modernsoft Innovations is a global software development company providing web, mobile, AI and enterprise solutions.",
   sameAs: [
@@ -56,7 +56,7 @@ const serviceSchema = {
  provider: {
   "@type": "Organization",
   name: "Modernsoft Innovations",
-  url: "https://modernsoftinnovations.com",
+  url: "https://www.modernsoftinnovations.com",
 },
 
   areaServed: [

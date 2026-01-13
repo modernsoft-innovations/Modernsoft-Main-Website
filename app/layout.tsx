@@ -25,7 +25,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://modernsoftinnovations.com"),
+  metadataBase: new URL("https://www.modernsoftinnovations.com"),
 
   title: {
     default:
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   publisher: "Modernsoft Innovations",
 
   alternates: {
-    canonical: "https://modernsoftinnovations.com",
+    canonical: "https://www.modernsoftinnovations.com",
   },
 
   robots: {
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    url: "https://modernsoftinnovations.com",
+    url: "https://www.modernsoftinnovations.com",
     siteName: "Modernsoft Innovations",
     locale: "en_US",
 
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "https://modernsoftinnovations.com/og-image.png",
+        url: "https://www.modernsoftinnovations.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Modernsoft Innovations – Software Development Company",
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     "Custom Software Development Company – Modernsoft Innovations",
   description:
     "We help startups and enterprises build scalable web, mobile and AI-powered software solutions worldwide.",
-  images: ["https://modernsoftinnovations.com/og-image.png"],
+  images: ["https://www.modernsoftinnovations.com/og-image.png"],
 },
 
 }
