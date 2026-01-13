@@ -35,18 +35,14 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "modernsoftinnovations.com",
-          },
-        ],
-        destination: "https://www.modernsoftinnovations.com/:path*",
+        source: '/:path*',
+        has: [{ type: 'host', value: 'modernsoftinnovations.com' }],
+        destination: 'https://www.modernsoftinnovations.com/:path*',
         permanent: true,
       },
     ]
   },
 }
+
 
 export default nextConfig
