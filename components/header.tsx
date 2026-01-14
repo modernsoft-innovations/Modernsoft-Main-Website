@@ -6,6 +6,9 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+const [mobileOpen, setMobileOpen] = useState(false)
+const [servicesOpen, setServicesOpen] = useState(false)
+const [collaborationOpen, setCollaborationOpen] = useState(false)
 
 const serviceMegaMenu = {
   tagline: "AI-powered development for 10× faster software delivery.",
@@ -146,32 +149,47 @@ export default function Header() {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
-     {/* MOBILE MENU */}
-{/* MOBILE MENU */}
+  {/* MOBILE MENU */}
 <AnimatePresence>
   {mobileOpen && (
     <motion.div
-      initial={{ opacity: 0, y: -12 }}
+      initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -12 }}
+      exit={{ opacity: 0, y: -16 }}
       className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t"
     >
-      <nav className="px-6 py-8 space-y-6 text-base">
+      <nav className="px-6 py-8 space-y-6 text-[16px]">
 
-        <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
-        <Link href="/about" onClick={() => setMobileOpen(false)}>About</Link>
+        {/* HOME */}
+        <Link
+          href="/"
+          onClick={() => setMobileOpen(false)}
+          className="block py-2"
+        >
+          Home
+        </Link>
+
+        {/* ABOUT */}
+        <Link
+          href="/about"
+          onClick={() => setMobileOpen(false)}
+          className="block py-2"
+        >
+          About
+        </Link>
 
         {/* SERVICES DROPDOWN */}
         <div className="border-t pt-4">
           <button
             onClick={() => setServicesOpen(!servicesOpen)}
-            className="flex w-full items-center justify-between font-semibold"
+            className="flex w-full items-center justify-between py-2 font-semibold"
           >
             Services
             <ChevronDown
-              className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`}
               size={18}
+              className={`transition-transform ${
+                servicesOpen ? "rotate-180" : ""
+              }`}
             />
           </button>
 
@@ -181,7 +199,7 @@ export default function Header() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className="mt-4 space-y-3 pl-4 text-sm text-slate-700"
+                className="mt-3 space-y-3 pl-4 text-sm text-slate-700"
               >
                 {serviceMegaMenu.services.map(item => (
                   <Link
@@ -191,7 +209,7 @@ export default function Header() {
                       setMobileOpen(false)
                       setServicesOpen(false)
                     }}
-                    className="block"
+                    className="block py-1"
                   >
                     {item.name}
                   </Link>
@@ -203,7 +221,7 @@ export default function Header() {
                     setMobileOpen(false)
                     setServicesOpen(false)
                   }}
-                  className="block font-semibold text-orange-600 pt-2"
+                  className="block pt-2 font-semibold text-orange-600"
                 >
                   View All Services →
                 </Link>
@@ -212,19 +230,102 @@ export default function Header() {
           </AnimatePresence>
         </div>
 
-        <Link href="/portfolio" onClick={() => setMobileOpen(false)}>Portfolio</Link>
-        <Link href="/careers" onClick={() => setMobileOpen(false)}>Career</Link>
-        <Link href="/contact" onClick={() => setMobileOpen(false)}>Contact</Link>
-        <Link href="/blog" onClick={() => setMobileOpen(false)}>Blog</Link>
+        {/* COLLABORATION MODELS DROPDOWN */}
+        <div className="border-t pt-4">
+          <button
+            onClick={() => setCollaborationOpen(!collaborationOpen)}
+            className="flex w-full items-center justify-between py-2 font-semibold"
+          >
+            Collaboration Models
+            <ChevronDown
+              size={18}
+              className={`transition-transform ${
+                collaborationOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
 
+          <AnimatePresence>
+            {collaborationOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                className="mt-3 space-y-3 pl-4 text-sm text-slate-700"
+              >
+                {serviceMegaMenu.collaboration.map(item => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => {
+                      setMobileOpen(false)
+                      setCollaborationOpen(false)
+                    }}
+                    className="block py-1"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+
+                <Link
+                  href="/partnerships"
+                  onClick={() => {
+                    setMobileOpen(false)
+                    setCollaborationOpen(false)
+                  }}
+                  className="block pt-2 font-semibold text-orange-600"
+                >
+                  View All Models →
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* PORTFOLIO */}
+        <Link
+          href="/portfolio"
+          onClick={() => setMobileOpen(false)}
+          className="block py-2"
+        >
+          Portfolio
+        </Link>
+
+        {/* CAREER */}
+        <Link
+          href="/careers"
+          onClick={() => setMobileOpen(false)}
+          className="block py-2"
+        >
+          Career
+        </Link>
+
+        {/* CONTACT */}
+        <Link
+          href="/contact"
+          onClick={() => setMobileOpen(false)}
+          className="block py-2"
+        >
+          Contact
+        </Link>
+
+        {/* BLOG */}
+        <Link
+          href="/blog"
+          onClick={() => setMobileOpen(false)}
+          className="block py-2"
+        >
+          Blog
+        </Link>
+
+        {/* CTA */}
         <a
           href="https://calendly.com/sadmansakib4112/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="block pt-4"
         >
-          <Button className="w-full bg-yellow-400 hover:bg-yellow-600 text-black">
-            Schedule Call
+          <Button className="w-full mt-6 bg-yellow-400 hover:bg-yellow-500 text-black py-5 text-base">
+            Schedule a Call
           </Button>
         </a>
 
