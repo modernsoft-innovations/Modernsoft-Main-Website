@@ -13,6 +13,7 @@ interface TechItem {
 const techCategories: Record<string, TechItem[]> = {
   Frontend: [
     { name: "React.js", experience: "5+ years", logo: "/tech/react.svg" },
+    
     { name: "Next.js", experience: "5+ years", logo: "/tech/nextjs.svg" },
     { name: "Vue.js", experience: "4+ years", logo: "/tech/vue.svg" },
     { name: "Angular", experience: "4+ years", logo: "/tech/angular.svg" },
@@ -23,32 +24,32 @@ const techCategories: Record<string, TechItem[]> = {
     { name: "Node.js", experience: "5+ years", logo: "/tech/nodejs.svg" },
     { name: "Python Django", experience: "5+ years", logo: "/tech/django.svg" },
     { name: "PHP Laravel", experience: "5+ years", logo: "/tech/laravel.svg" },
-    { name: "ASP.NET Core", experience: "4+ years", logo: "/tech/dotnet.svg" },
+    { name: "ASP.NET Core", experience: "4+ years", logo: "/tech/asp.svg" },
     { name: "FastAPI", experience: "3+ years", logo: "/tech/fastapi.svg" },
-    { name: "Ruby on Rails", experience: "3+ years", logo: "/tech/rails.svg" },
+    // { name: "Ruby on Rails", experience: "3+ years", logo: "/tech/rails.svg" },
   ],
   Mobile: [
     { name: "Flutter", experience: "4+ years", logo: "/tech/flutter.svg" },
     { name: "React Native", experience: "4+ years", logo: "/tech/react-native.svg" },
     { name: "Swift (iOS)", experience: "5+ years", logo: "/tech/swift.svg" },
     { name: "Kotlin (Android)", experience: "5+ years", logo: "/tech/kotlin.svg" },
-    { name: "Xamarin", experience: "3+ years", logo: "/tech/xamarin.svg" },
+    // { name: "Xamarin", experience: "3+ years", logo: "/tech/xamarin.svg" },
   ],
   "AI/ML": [
     { name: "OpenAI GPT-4", experience: "2+ years", logo: "/tech/openai.svg" },
-    { name: "LangChain", experience: "2+ years", logo: "/tech/langchain.svg" },
+    // { name: "LangChain", experience: "2+ years", logo: "/tech/langchain.svg" },
     { name: "TensorFlow", experience: "4+ years", logo: "/tech/tensorflow.svg" },
-    { name: "PyTorch", experience: "3+ years", logo: "/tech/pytorch.svg" },
-    { name: "Hugging Face", experience: "2+ years", logo: "/tech/huggingface.svg" },
-    { name: "Pinecone", experience: "2+ years", logo: "/tech/pinecone.svg" },
+    // { name: "PyTorch", experience: "3+ years", logo: "/tech/pytorch.svg" },
+    // { name: "Hugging Face", experience: "2+ years", logo: "/tech/huggingface.svg" },
+    // { name: "Pinecone", experience: "2+ years", logo: "/tech/pinecone.svg" },
   ],
   Cloud: [
-    { name: "Amazon AWS", experience: "5+ years", logo: "/tech/aws.svg" },
+    { name: "Amazon AWS", experience: "5+ years", logo: "/aws.svg" },
     { name: "Microsoft Azure", experience: "4+ years", logo: "/tech/azure.svg" },
-    { name: "Google Cloud", experience: "4+ years", logo: "/tech/gcp.svg" },
+    // { name: "Google Cloud", experience: "4+ years", logo: "/tech/gcp.svg" },
     { name: "Docker", experience: "5+ years", logo: "/tech/docker.svg" },
-    { name: "Kubernetes", experience: "4+ years", logo: "/tech/kubernetes.svg" },
-    { name: "Terraform", experience: "3+ years", logo: "/tech/terraform.svg" },
+    // { name: "Kubernetes", experience: "4+ years", logo: "/tech/kubernetes.svg" },
+    // { name: "Terraform", experience: "3+ years", logo: "/tech/terraform.svg" },
   ],
 }
 

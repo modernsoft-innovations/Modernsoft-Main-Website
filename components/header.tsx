@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 /* ================= DATA ================= */
@@ -65,54 +65,76 @@ export default function Header() {
             <Link href="/about">About</Link>
 
             {/* SERVICES MEGA MENU */}
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
-              <button className="flex items-center gap-1">
-                Services <ChevronDown size={16} />
-              </button>
+           <div
+  className="relative"
+  onMouseEnter={() => setServicesOpen(true)}
+  onMouseLeave={() => setServicesOpen(false)}
+>
+  <button className="flex items-center gap-1">
+    Services <ChevronDown size={16} />
+  </button>
 
-              <AnimatePresence>
-                {servicesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 12 }}
-                    className="absolute left-1/2 -translate-x-1/2 mt-6 w-[1000px] rounded-2xl bg-white p-8 shadow-2xl"
-                  >
-                    <p className="font-semibold mb-6 text-slate-600">
-                      {serviceMegaMenu.tagline}
-                    </p>
+  <AnimatePresence>
+    {servicesOpen && (
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 12 }}
+        className="absolute left-1/2 -translate-x-1/2 mt-6 w-[1000px] rounded-2xl bg-white p-8 shadow-2xl"
+      >
+        <p className="font-semibold mb-6 text-slate-600">
+          {serviceMegaMenu.tagline}
+        </p>
 
-                    <div className="grid grid-cols-2 gap-10">
-                      <div>
-                        <h4 className="mb-4 font-bold text-orange-500">
-                          Services
-                        </h4>
-                        {serviceMegaMenu.services.map(item => (
-                          <Link key={item.name} href={item.href} className="block py-1.5 hover:text-orange-500">
-                            → {item.name}
-                          </Link>
-                        ))}
-                      </div>
+        <div className="grid grid-cols-2 gap-10">
+          {/* SERVICES */}
+          <div>
+            <h4 className="mb-4 font-bold text-orange-500">
+              Services
+            </h4>
+            {serviceMegaMenu.services.map(item => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block py-1.5 hover:text-orange-500"
+              >
+                → {item.name}
+              </Link>
+            ))}
+          </div>
 
-                      <div>
-                        <h4 className="mb-4 font-bold text-orange-500">
-                          Collaboration Models
-                        </h4>
-                        {serviceMegaMenu.collaboration.map(item => (
-                          <Link key={item.name} href={item.href} className="block py-1.5 hover:text-orange-500">
-                            → {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+          {/* COLLABORATION MODELS */}
+          <div>
+            <h4 className="mb-4 font-bold text-orange-500">
+              Collaboration Models
+            </h4>
+            {serviceMegaMenu.collaboration.map(item => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block py-1.5 hover:text-orange-500"
+              >
+                → {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* 🔥 VIEW ALL SERVICES CTA */}
+        <div className="mt-8 pt-6 border-t flex justify-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-lg bg-yellow-400 px-6 py-3 font-semibold text-black hover:bg-yellow-500 transition"
+          >
+            View All Services
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
 
             <Link href="/portfolio">Portfolio</Link>
             <Link href="/careers">Career</Link>

@@ -1,5 +1,7 @@
 "use client"
 
+import PoweredByScroller from "@/components/powered-by-scroller"
+
 import { motion } from "framer-motion"
 import {
   Settings,
@@ -15,7 +17,6 @@ import {
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
-
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
@@ -104,13 +105,13 @@ const serviceGroups = [
 
 function ServicesHero() {
   return (
-    <section className="bg-[#b8bfc5] py-35 mt-8">
+    <section className="bg-[#b8bfc5] py-32 mt-8">
       <div className="container mx-auto px-8 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl md:text-6x font-bold text-black"
+          className="text-5xl md:text-6xl font-bold text-black"
         >
           Software Services Built for Real Business
         </motion.h1>
@@ -229,6 +230,7 @@ export default function ServicesPage() {
   return (
     <>
       <ServicesHero />
+      <PoweredByScroller />
       <ServicesSection />
       <ServicesCTA />
     </>

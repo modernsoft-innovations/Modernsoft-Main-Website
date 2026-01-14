@@ -1,21 +1,21 @@
-import type { Metadata } from "next"
-import HeroSection from "@/components/hero-section"
-import ServicesSection from "@/components/services-section"
-import TechStackSection from "@/components/tech-stack-section"
-import WhyChooseUsSection from "@/components/why-choose-us-section"
-import StatsSection from "@/components/stats-section"
-import IndustriesSection from "@/components/industries-section"
-import TestimonialsSection from "@/components/testimonials-section"
-import CTASection from "@/components/cta-section"
-import StructuredData from "@/components/structured-data"
-import CollaborationModels from "@/components/CollaborationModels"
-import DevelopmentProcess from "@/components/DevelopmentProcess"
-import { ScrollToTop } from "@/components/scroll-to-top"
-import WhatWeBuiltSection from "@/components/WhatWeBuiltSection"
-import ScrollStack from "@/components/scroll-stack"
+import type { Metadata } from "next";
+import HeroSection from "@/components/hero-section";
+import ServicesSection from "@/components/services-section";
+import TechStackSection from "@/components/tech-stack-section";
+import WhyChooseUsSection from "@/components/why-choose-us-section";
+import StatsSection from "@/components/stats-section";
+import IndustriesSection from "@/components/industries-section";
+import TestimonialsSection from "@/components/testimonials-section";
+import CTASection from "@/components/cta-section";
+import StructuredData from "@/components/structured-data";
+import CollaborationModels from "@/components/CollaborationModels";
+import DevelopmentProcess from "@/components/DevelopmentProcess";
+import { ScrollToTop } from "@/components/scroll-to-top";
+import WhatWeBuiltSection from "@/components/WhatWeBuiltSection";
+import ScrollStack from "@/components/scroll-stack";
 
 export const metadata: Metadata = {
-    title:
+  title:
     "Global Software Development Company | Web, Mobile & AI Solutions | Modernsoft Innovations",
 
   description:
@@ -24,10 +24,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  
+
   openGraph: {
-    title:
-      "Custom Software Development Company – Modernsoft Innovations",
+    title: "Custom Software Development Company – Modernsoft Innovations",
     description:
       "We help startups and enterprises build scalable software products using modern web, mobile and AI technologies.",
     images: [
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
+};
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -49,35 +48,33 @@ const organizationSchema = {
   logo: "https://www.modernsoftinnovations.com/favicon.png",
   description:
     "Modernsoft Innovations is a global software development company providing web, mobile, AI and enterprise solutions.",
-  sameAs: [
-    "https://www.linkedin.com/company/modernsoft-innovations",
-  ],
-}
+  sameAs: ["https://www.linkedin.com/company/modernsoft-innovations"],
+};
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   serviceType: "Software Development",
- provider: {
-  "@type": "Organization",
-  name: "Modernsoft Innovations",
-  url: "https://www.modernsoftinnovations.com",
-},
+  provider: {
+    "@type": "Organization",
+    name: "Modernsoft Innovations",
+    url: "https://www.modernsoftinnovations.com",
+  },
 
   areaServed: [
-  "United States",
-  "United Kingdom",
-  "Australia",
-  "Canada",
-  "Germany",
-  "Singapore",
-  "United Arab Emirates",
-  "Switzerland",
-  "New Zealand",
-  "South Africa",
-  "Bangladesh",
-  "Global",
-],
+    "United States",
+    "United Kingdom",
+    "Australia",
+    "Canada",
+    "Germany",
+    "Singapore",
+    "United Arab Emirates",
+    "Switzerland",
+    "New Zealand",
+    "South Africa",
+    "Bangladesh",
+    "Global",
+  ],
 
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -106,7 +103,7 @@ const serviceSchema = {
       },
     ],
   },
-}
+};
 
 export default function HomePage() {
   return (
@@ -114,21 +111,21 @@ export default function HomePage() {
       <StructuredData data={organizationSchema} />
       <StructuredData data={serviceSchema} />
       <main className="min-h-screen">
-      <HeroSection />
-      
-      <WhatWeBuiltSection />
-<ServicesSection />
-<CollaborationModels />
-<DevelopmentProcess />
+        <HeroSection />
 
-<StatsSection />
-<IndustriesSection />
-<TechStackSection />
-<TestimonialsSection />
-<WhyChooseUsSection />
-<CTASection />
-<ScrollToTop />
+        <WhatWeBuiltSection />
+        <ServicesSection />
+        <CollaborationModels />
+        <DevelopmentProcess />
+
+        <StatsSection />
+        <IndustriesSection />
+        <TechStackSection />
+        <TestimonialsSection />
+        <WhyChooseUsSection />
+        <CTASection />
+        <ScrollToTop />
       </main>
     </>
-  )
+  );
 }
