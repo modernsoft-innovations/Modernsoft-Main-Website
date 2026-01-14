@@ -6,19 +6,11 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-const [mobileOpen, setMobileOpen] = useState(false)
-const [servicesOpen, setServicesOpen] = useState(false)
-const [collaborationOpen, setCollaborationOpen] = useState(false)
+
+/* ================= DATA ================= */
 
 const serviceMegaMenu = {
   tagline: "AI-powered development for 10× faster software delivery.",
-  collaboration: [
-    { name: "White Label Partnership", href: "/partnerships" },
-    { name: "Staff Augmentation", href: "/partnerships" },
-    { name: "MVP Development", href: "/partnerships" },
-    { name: "Solution Partner", href: "/partnerships" },
-    { name: "Project-Based Development", href: "/partnerships" },
-  ],
   services: [
     { name: "Website Design & Development", href: "/services/website-development" },
     { name: "Software Development", href: "/services/software-development" },
@@ -27,12 +19,22 @@ const serviceMegaMenu = {
     { name: "AI & Business Automation", href: "/services/ai-automation" },
     { name: "QA & Automation Testing", href: "/services/software-testing" },
   ],
+  collaboration: [
+    { name: "White Label Partnership", href: "/partnerships" },
+    { name: "Staff Augmentation", href: "/partnerships" },
+    { name: "MVP Development", href: "/partnerships" },
+    { name: "Solution Partner", href: "/partnerships" },
+    { name: "Project-Based Development", href: "/partnerships" },
+  ],
 }
+
+/* ================= COMPONENT ================= */
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [collaborationOpen, setCollaborationOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 50)
@@ -58,7 +60,7 @@ export default function Header() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden md:flex items-center gap-8 font-normal">
+          <nav className="hidden md:flex items-center gap-8">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
 
@@ -78,44 +80,30 @@ export default function Header() {
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 12 }}
-                    className="absolute left-1/2 -translate-x-1/2 mt-6 w-[1000px] rounded-2xl bg-[#ffffff] p-8 shadow-2xl"
+                    className="absolute left-1/2 -translate-x-1/2 mt-6 w-[1000px] rounded-2xl bg-white p-8 shadow-2xl"
                   >
-                    <p className="text-white font-semibold mb-6">
+                    <p className="font-semibold mb-6 text-slate-600">
                       {serviceMegaMenu.tagline}
                     </p>
 
-                    <div className="grid grid-cols-2 gap-10 text-slate-800">
+                    <div className="grid grid-cols-2 gap-10">
                       <div>
-                        <h4 className="mb-4 font-bold text-orange-400">
+                        <h4 className="mb-4 font-bold text-orange-500">
                           Services
                         </h4>
                         {serviceMegaMenu.services.map(item => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block py-1.5 text-1xl hover:text-orange-300"
-                          >
+                          <Link key={item.name} href={item.href} className="block py-1.5 hover:text-orange-500">
                             → {item.name}
                           </Link>
                         ))}
-                        <Link
-                          href="/services"
-                          className="block mt-4 font-semibold text-orange-400 hover:underline"
-                        >
-                          View All Services →
-                        </Link>
                       </div>
 
                       <div>
-                        <h4 className="mb-4 font-bold text-orange-400">
+                        <h4 className="mb-4 font-bold text-orange-500">
                           Collaboration Models
                         </h4>
                         {serviceMegaMenu.collaboration.map(item => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block py-1.5 text-1xl hover:text-orange-300"
-                          >
+                          <Link key={item.name} href={item.href} className="block py-1.5 hover:text-orange-500">
                             → {item.name}
                           </Link>
                         ))}
@@ -131,209 +119,100 @@ export default function Header() {
             <Link href="/contact">Contact</Link>
             <Link href="/blog">Blog</Link>
 
-            <a
-              href="https://calendly.com/sadmansakib4112/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button className="bg-yellow-400 hover:bg-yellow-600 text-black px-8 py-6">
+            <a href="https://calendly.com/sadmansakib4112/30min" target="_blank">
+              <Button className="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-6">
                 Schedule Call
               </Button>
             </a>
           </nav>
 
-          {/* MOBILE BUTTON */}
+          {/* MOBILE TOGGLE */}
           <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X /> : <Menu />}
           </button>
         </div>
       </div>
 
-  {/* MOBILE MENU */}
-<AnimatePresence>
-  {mobileOpen && (
-    <motion.div
-      initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -16 }}
-      className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t"
-    >
-      <nav className="px-6 py-8 space-y-6 text-[16px]">
-
-        {/* HOME */}
-        <Link
-          href="/"
-          onClick={() => setMobileOpen(false)}
-          className="block py-2"
-        >
-          Home
-        </Link>
-
-        {/* ABOUT */}
-        <Link
-          href="/about"
-          onClick={() => setMobileOpen(false)}
-          className="block py-2"
-        >
-          About
-        </Link>
-
-        {/* SERVICES DROPDOWN */}
-        <div className="border-t pt-4">
-          <button
-            onClick={() => setServicesOpen(!servicesOpen)}
-            className="flex w-full items-center justify-between py-2 font-semibold"
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            className="md:hidden bg-white border-t shadow-xl"
           >
-            Services
-            <ChevronDown
-              size={18}
-              className={`transition-transform ${
-                servicesOpen ? "rotate-180" : ""
-              }`}
-            />
-          </button>
+            <nav className="px-6 py-8 space-y-5">
 
-          <AnimatePresence>
-            {servicesOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                className="mt-3 space-y-3 pl-4 text-sm text-slate-700"
-              >
-                {serviceMegaMenu.services.map(item => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => {
-                      setMobileOpen(false)
-                      setServicesOpen(false)
-                    }}
-                    className="block py-1"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+              <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
+              <Link href="/about" onClick={() => setMobileOpen(false)}>About</Link>
 
-                <Link
-                  href="/services"
-                  onClick={() => {
-                    setMobileOpen(false)
-                    setServicesOpen(false)
-                  }}
-                  className="block pt-2 font-semibold text-orange-600"
+              {/* SERVICES */}
+              <div>
+                <button
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className="flex w-full justify-between font-semibold"
                 >
-                  View All Services →
-                </Link>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+                  Services <ChevronDown className={servicesOpen ? "rotate-180" : ""} />
+                </button>
 
-        {/* COLLABORATION MODELS DROPDOWN */}
-        <div className="border-t pt-4">
-          <button
-            onClick={() => setCollaborationOpen(!collaborationOpen)}
-            className="flex w-full items-center justify-between py-2 font-semibold"
-          >
-            Collaboration Models
-            <ChevronDown
-              size={18}
-              className={`transition-transform ${
-                collaborationOpen ? "rotate-180" : ""
-              }`}
-            />
-          </button>
+                {servicesOpen && (
+                  <div className="mt-3 pl-4 space-y-2">
+                    {serviceMegaMenu.services.map(item => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block text-sm"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-          <AnimatePresence>
-            {collaborationOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                className="mt-3 space-y-3 pl-4 text-sm text-slate-700"
-              >
-                {serviceMegaMenu.collaboration.map(item => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => {
-                      setMobileOpen(false)
-                      setCollaborationOpen(false)
-                    }}
-                    className="block py-1"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-
-                <Link
-                  href="/partnerships"
-                  onClick={() => {
-                    setMobileOpen(false)
-                    setCollaborationOpen(false)
-                  }}
-                  className="block pt-2 font-semibold text-orange-600"
+              {/* COLLABORATION */}
+              <div>
+                <button
+                  onClick={() => setCollaborationOpen(!collaborationOpen)}
+                  className="flex w-full justify-between font-semibold"
                 >
-                  View All Models →
-                </Link>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+                  Collaboration Models
+                  <ChevronDown className={collaborationOpen ? "rotate-180" : ""} />
+                </button>
 
-        {/* PORTFOLIO */}
-        <Link
-          href="/portfolio"
-          onClick={() => setMobileOpen(false)}
-          className="block py-2"
-        >
-          Portfolio
-        </Link>
+                {collaborationOpen && (
+                  <div className="mt-3 pl-4 space-y-2">
+                    {serviceMegaMenu.collaboration.map(item => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block text-sm"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-        {/* CAREER */}
-        <Link
-          href="/careers"
-          onClick={() => setMobileOpen(false)}
-          className="block py-2"
-        >
-          Career
-        </Link>
+              <Link href="/portfolio" onClick={() => setMobileOpen(false)}>Portfolio</Link>
+              <Link href="/careers" onClick={() => setMobileOpen(false)}>Career</Link>
+              <Link href="/contact" onClick={() => setMobileOpen(false)}>Contact</Link>
+              <Link href="/blog" onClick={() => setMobileOpen(false)}>Blog</Link>
 
-        {/* CONTACT */}
-        <Link
-          href="/contact"
-          onClick={() => setMobileOpen(false)}
-          className="block py-2"
-        >
-          Contact
-        </Link>
+              <a href="https://calendly.com/sadmansakib4112/30min" target="_blank">
+                <Button className="w-full mt-4 bg-yellow-400 hover:bg-yellow-500 text-black py-5">
+                  Schedule a Call
+                </Button>
+              </a>
 
-        {/* BLOG */}
-        <Link
-          href="/blog"
-          onClick={() => setMobileOpen(false)}
-          className="block py-2"
-        >
-          Blog
-        </Link>
-
-        {/* CTA */}
-        <a
-          href="https://calendly.com/sadmansakib4112/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button className="w-full mt-6 bg-yellow-400 hover:bg-yellow-500 text-black py-5 text-base">
-            Schedule a Call
-          </Button>
-        </a>
-
-      </nav>
-    </motion.div>
-  )}
-</AnimatePresence>
-
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
