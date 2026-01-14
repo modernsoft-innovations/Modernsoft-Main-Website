@@ -16,14 +16,35 @@ import ScrollStack from "@/components/scroll-stack";
 
 export const metadata: Metadata = {
   title:
-    "Global Software Development Company | Web, Mobile & AI Solutions | Modernsoft Innovations",
+    "Software & Web Development Company | Modernsoft Innovations",
 
   description:
-    "Looking for a reliable software development partner? Modernsoft Innovations builds high-performance web, mobile & AI solutions for startups and enterprises worldwide.",
+    "We help SMEs, startups, and global founders design, build, and scale web, mobile, and AI software—reliably and cost-effectively.",
+
 
   alternates: {
-    canonical: "/",
+  canonical: "https://www.modernsoftinnovations.com",
+  languages: {
+    "en-US": "https://www.modernsoftinnovations.com",
+    "en-GB": "https://www.modernsoftinnovations.com/uk",
+    "en-AU": "https://www.modernsoftinnovations.com/au",
   },
+},
+  keywords: [
+  "software development agency",
+  "offshore software development",
+  "web development agency",
+  "web development company in Bangladesh",
+  "hire dedicated developers",
+  "mvp development for startups",
+  "project based software development",
+  "team augmentation services",
+  "web application development",
+  "mobile app development agency",
+  "AI software development",
+  "custom software solutions",
+  "Bangladesh software agency",
+],
 
   openGraph: {
     title: "Custom Software Development Company – Modernsoft Innovations",

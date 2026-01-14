@@ -13,6 +13,10 @@ export const headingFont = Plus_Jakarta_Sans({
   weight: ["500", "600", "700"],
   variable: "--font-heading",
 })
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+}
 
 export const bodyFont = Inter({
   subsets: ["latin"],

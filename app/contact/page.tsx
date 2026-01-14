@@ -5,9 +5,9 @@ import ContactInfo from "@/components/contact/contact-info"
 import FAQ from "@/components/contact/faq"
 
 export const metadata: Metadata = {
-  title: "Contact Us - Get in Touch | Modernsoft Innovations",
+  title: "Contact ModernSoft Innovations | Discuss Your Project",
   description:
-    "Contact Modernsoft Innovations for your software development needs. Schedule a free consultation, get a quote, or reach out directly. Response time under 2 hours.",
+    "Talk to our team about your website, software, or MVP idea. Get expert guidance and transparent estimates.",
   keywords: "contact modernsoft innovations, software development quote, free consultation, get in touch",
 }
 

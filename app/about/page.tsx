@@ -6,10 +6,11 @@ import OurValues from "@/components/about/our-values"
 import DevelopmentProcess from "@/components/DevelopmentProcess"
 
 export const metadata: Metadata = {
-  title: "About Us - Leadership & Team | Modernsoft Innovations",
+  title: "About ModernSoft Innovations | Trusted Software Development Partner",
   description:
-    "Learn about Modernsoft Innovations - Founded in 2023 by Sadman Sakib and Nafiz Ahmed. 10+ expert engineers, global standards built in Bangladesh.",
-  keywords: "about modernsoft innovations, software development team, company leadership, tech company bangladesh",
+    "ModernSoft Innovations is a software and web development agency helping SMEs, startups, and global businesses build reliable, scalable digital products.",
+
+  keywords: ["about modernsoft innovations", "software development team", "bangladesh software agency","tech company bangladesh"],
 }
 
 export default function AboutPage() {
