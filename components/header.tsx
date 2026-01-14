@@ -120,7 +120,7 @@ export default function Header() {
             <Link href="/blog">Blog</Link>
 
             <a href="https://calendly.com/sadmansakib4112/30min" target="_blank">
-              <Button className="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-6">
+              <Button className="bg-yellow-400 hover:bg-yellow-500 text-black-2xl px-8 py-6 text-base">
                 Schedule Call
               </Button>
             </a>
