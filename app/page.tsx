@@ -41,7 +41,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Modernsoft Innovations",
   url: "https://www.modernsoftinnovations.com",
-  logo: "https://www.modernsoftinnovations.com/logo.png",
+  logo: "https://www.modernsoftinnovations.com/favicon.png",
   description:
     "Modernsoft Innovations is a global software development company providing web, mobile, AI and enterprise solutions.",
   sameAs: [
