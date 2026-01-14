@@ -5,15 +5,8 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Check, ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Offshore Development & Dedicated Teams | ModernSoft Innovations",
-  description:
-    "Hire offshore developers or dedicated teams for project-based work, MVPs, and long-term product development.",
 
-  keywords: ["offshore development team", "dedicated development team", "white label software development","software outsourcing partner"],
-}
 
 
 const models = [

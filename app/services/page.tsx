@@ -19,7 +19,7 @@ import {
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Metadata } from "next"
+
 
 /* ================= DATA ================= */
 
@@ -200,13 +200,8 @@ function ServicesSection() {
     </section>
   )
 }
-export const metadata: Metadata = {
-  title: "Software, Web & Mobile Development Services | ModernSoft Innovations",
-  description:
-    "From websites to enterprise software, we deliver scalable web, mobile, and AI solutions for SMEs, startups, and global partners.",
 
-  keywords: ["modernsoft innovations services", "software development service", "best software development services","custom software solutions", "web development services","website development company in bangladesh", "tech company bangladesh","offshore development services"],
-}
+
 
 /* ================= CTA ================= */
 
