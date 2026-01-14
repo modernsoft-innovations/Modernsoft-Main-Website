@@ -148,6 +148,7 @@ export default function Header() {
 
       {/* MOBILE MENU */}
      {/* MOBILE MENU */}
+{/* MOBILE MENU */}
 <AnimatePresence>
   {mobileOpen && (
     <motion.div
@@ -156,55 +157,73 @@ export default function Header() {
       exit={{ opacity: 0, y: -12 }}
       className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t"
     >
-      <nav className="px-8 py-8 space-y-8 font-light">
+      <nav className="px-6 py-8 space-y-6 text-base">
 
-        <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link><br />
+        <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
         <Link href="/about" onClick={() => setMobileOpen(false)}>About</Link>
 
-        {/* SERVICES */}
-        <div>
-          <p className="font-bold mb-3">Services</p>
-          <div className="space-y-2 pl-3 text-sm">
-            {serviceMegaMenu.services.map(item => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="block text-slate-700"
+        {/* SERVICES DROPDOWN */}
+        <div className="border-t pt-4">
+          <button
+            onClick={() => setServicesOpen(!servicesOpen)}
+            className="flex w-full items-center justify-between font-semibold"
+          >
+            Services
+            <ChevronDown
+              className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+              size={18}
+            />
+          </button>
+
+          <AnimatePresence>
+            {servicesOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                className="mt-4 space-y-3 pl-4 text-sm text-slate-700"
               >
-                → {item.name}
-              </Link>
-            ))}
-            <Link
-              href="/services"
-              onClick={() => setMobileOpen(false)}
-              className="block font-semibold text-orange-600 mt-2"
-            >
-              View All Services →
-            </Link>
-          </div>
+                {serviceMegaMenu.services.map(item => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => {
+                      setMobileOpen(false)
+                      setServicesOpen(false)
+                    }}
+                    className="block"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+
+                <Link
+                  href="/services"
+                  onClick={() => {
+                    setMobileOpen(false)
+                    setServicesOpen(false)
+                  }}
+                  className="block font-semibold text-orange-600 pt-2"
+                >
+                  View All Services →
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
-        {/* COLLABORATION MODELS (SINGLE CTA) */}
-        <Link
-          href="/partnerships"
-          onClick={() => setMobileOpen(false)}
-          className="block font-bold text-orange-600"
-        >
-          Collaboration Models
-        </Link>
-
-        <Link href="/portfolio" onClick={() => setMobileOpen(false)}>Portfolio</Link><br />
-        <Link href="/careers" onClick={() => setMobileOpen(false)}>Career</Link><br />
-        <Link href="/contact" onClick={() => setMobileOpen(false)}>Contact</Link><br />
-        <Link href="/blog" onClick={() => setMobileOpen(false)}>Blog</Link><br />
+        <Link href="/portfolio" onClick={() => setMobileOpen(false)}>Portfolio</Link>
+        <Link href="/careers" onClick={() => setMobileOpen(false)}>Career</Link>
+        <Link href="/contact" onClick={() => setMobileOpen(false)}>Contact</Link>
+        <Link href="/blog" onClick={() => setMobileOpen(false)}>Blog</Link>
 
         <a
           href="https://calendly.com/sadmansakib4112/30min"
           target="_blank"
           rel="noopener noreferrer"
+          className="block pt-4"
         >
-          <Button className="w-full bg-yellow-400 hover:bg-yellow-600 text-black mt-4">
+          <Button className="w-full bg-yellow-400 hover:bg-yellow-600 text-black">
             Schedule Call
           </Button>
         </a>
