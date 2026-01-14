@@ -15,11 +15,16 @@ import WhatWeBuiltSection from "@/components/WhatWeBuiltSection"
 import ScrollStack from "@/components/scroll-stack"
 
 export const metadata: Metadata = {
-  title:
+    title:
     "Global Software Development Company | Web, Mobile & AI Solutions | Modernsoft Innovations",
+
   description:
     "Looking for a reliable software development partner? Modernsoft Innovations builds high-performance web, mobile & AI solutions for startups and enterprises worldwide.",
 
+  alternates: {
+    canonical: "/",
+  },
+  
   openGraph: {
     title:
       "Custom Software Development Company – Modernsoft Innovations",
