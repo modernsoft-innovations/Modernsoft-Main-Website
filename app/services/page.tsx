@@ -51,12 +51,12 @@ const serviceGroups = [
         icon: Brain,
         link: "/services/ai-automation",
       },
-      {
-        title: "UI/UX Product Design",
-        description: "User-focused, scalable and clean product design.",
-        icon: PenTool,
-        link: "/services/ui-ux-design",
-      },
+      // {
+      //   title: "UI/UX Product Design",
+      //   description: "User-focused, scalable and clean product design.",
+      //   icon: PenTool,
+      //   link: "/services/ui-ux-design",
+      // },
       {
         title: "QA & Automation Testing",
         description: "Manual & automated testing for stability and security.",

@@ -104,7 +104,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {[
                 { name: "About Us", href: "/about" },
-                { name: "Collaboration Models", href: "/collaboration-models" },
+                { name: "Collaboration Models", href: "/partnerships" },
                 { name: "Case Studies", href: "/portfolio" },
                 { name: "Careers", href: "/careers" },
                 { name: "Contact", href: "/contact" },

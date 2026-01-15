@@ -113,7 +113,7 @@ export default function CollaborationModels() {
 
         {/* SECONDARY CTA */}
         <div className="text-center mt-16">
-          <Link href="/collaboration-models">
+          <Link href="/partnerships">
             <Button className="bg-yellow-400 hover:bg-yellow-300" size="lg">
               View Collaboration Details
               <ArrowRight className="ml-2 w-5 h-5" />
