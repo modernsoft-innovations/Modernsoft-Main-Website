@@ -137,10 +137,10 @@ export default function HomePage() {
         <WhatWeBuiltSection />
         <ServicesSection />
         <CollaborationModels />
+        <IndustriesSection />
         <DevelopmentProcess />
 
         <StatsSection />
-        <IndustriesSection />
         <TechStackSection />
         <TestimonialsSection />
         <WhyChooseUsSection />
