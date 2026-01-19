@@ -10,7 +10,7 @@ export default function OurStory() {
       <div className="container mx-auto px-4 space-y-24">
 
         {/* ================= WHO WE ARE ================= */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -18,14 +18,12 @@ export default function OurStory() {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            A Practical Software Partner for Growing Businesses
+            A Practical Software & Managed Development Partner for Growing Businesses
           </h2>
           <p className="text-lg text-slate-700 leading-relaxed">
-            ModernSoft Innovations is a software development company focused on building
-            business-driven digital solutions, from internal systems and ERPs to scalable
-            web, mobile, and AI-powered platforms.
+            We help startups, SMEs, and digital agencies build, run, and scale software products, from first MVP to long-term managed development — using a reliable offshore team based in Bangladesh.
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* ================= OUR STORY ================= */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -88,7 +86,7 @@ export default function OurStory() {
         </div>
 
         {/* ================= HOW WE WORK ================= */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -117,10 +115,10 @@ export default function OurStory() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* ================= WHY CHOOSE US ================= */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -148,7 +146,7 @@ export default function OurStory() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

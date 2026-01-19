@@ -4,6 +4,9 @@ import OurStory from "@/components/about/our-story"
 import Leadership from "@/components/about/leadership"
 import OurValues from "@/components/about/our-values"
 import DevelopmentProcess from "@/components/DevelopmentProcess"
+import WhatWeActuallyDo from "@/components/about/WhatWeActuallyDo"
+import HowWeWork from "@/components/about/HowWeWork"
+import WhyClientsChooseUs from "@/components/about/WhyClientsChooseUs"
 
 export const metadata: Metadata = {
   title: "About ModernSoft Innovations | Trusted Software Development Partner",
@@ -18,6 +21,9 @@ export default function AboutPage() {
     <main className="min-h-screen pt-20">
       <AboutHero />
       <OurStory />
+      <WhatWeActuallyDo />
+      <HowWeWork /> 
+      <WhyClientsChooseUs />
       {/* <DevelopmentProcess /> */}
       <Leadership />
       
