@@ -22,7 +22,7 @@ export default function OurStory() {
           </h2>
           <p className="text-lg text-slate-700 leading-relaxed">
             ModernSoft Innovations is a software development company focused on building
-            business-driven digital solutions — from internal systems and ERPs to scalable
+            business-driven digital solutions, from internal systems and ERPs to scalable
             web, mobile, and AI-powered platforms.
           </p>
         </motion.div>
@@ -70,7 +70,7 @@ export default function OurStory() {
 
               <p>
                 Starting with a small internal management system for a local business,
-                we quickly realized that successful software is not about flashy features —
+                we quickly realized that successful software is not about flashy features,
                 it’s about clarity, reliability, and long-term scalability.
               </p>
 
@@ -103,6 +103,7 @@ export default function OurStory() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
+              "Managed development partnerships",
               "Dedicated offshore teams",
               "White-label development for agencies",
               "Founder-led technical planning",

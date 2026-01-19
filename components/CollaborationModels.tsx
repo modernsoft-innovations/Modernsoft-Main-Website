@@ -7,17 +7,17 @@ import { ArrowRight } from "lucide-react"
 
 const models = [
   {
-    title: "Dedicated Offshore Teams",
-    tag: "Long-term engagement",
+    title: "Managed Development Services",
+    tag: "End-to-end ownership",
     description:
-      "A stable offshore team working exclusively on your product, aligned with your internal processes and standards.",
+      "We take full responsibility for planning, development, delivery, and ongoing improvement. Acting as your long-term offshore engineering partner.",
     points: [
-      "Dedicated engineers assigned to your project",
-      "Direct communication and timezone overlap",
-      "Flexible team scaling based on workload",
+      "Roadmap planning, sprint execution, and QA",
+    "Release management and production support",
+    "Ongoing optimization, security, and scalability",
     ],
-    price: "$18–$40 / hour",
-    cta: "Hire Developers",
+    price: "Monthly retainer or custom pricing",
+    cta: "Explore Managed Services",
   },
   {
     title: "White Label Partnership",

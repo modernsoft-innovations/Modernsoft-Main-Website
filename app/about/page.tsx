@@ -18,7 +18,7 @@ export default function AboutPage() {
     <main className="min-h-screen pt-20">
       <AboutHero />
       <OurStory />
-      <DevelopmentProcess />
+      {/* <DevelopmentProcess /> */}
       <Leadership />
       
       {/* <OurValues /> */}
