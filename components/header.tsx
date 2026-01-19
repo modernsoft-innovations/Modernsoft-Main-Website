@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "framer-motion"
 /* ================= DATA ================= */
 
 const serviceMegaMenu = {
-  tagline: "AI-powered development for 10× faster software delivery.",
+  // tagline: "AI-powered development for 10× faster software delivery.",
   services: [
     { name: "Website Design & Development", href: "/services/website-development" },
     { name: "Software Development", href: "/services/software-development" },
