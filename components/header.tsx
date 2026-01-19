@@ -20,10 +20,11 @@ const serviceMegaMenu = {
     { name: "QA & Automation Testing", href: "/services/software-testing" },
   ],
   collaboration: [
+    { name: "Managed Development Partner", href: "/partnerships" },
     { name: "White Label Partnership", href: "/partnerships" },
     { name: "Staff Augmentation", href: "/partnerships" },
     { name: "MVP Development", href: "/partnerships" },
-    { name: "Solution Partner", href: "/partnerships" },
+    // { name: "Solution Partner", href: "/partnerships" },
     { name: "Project-Based Development", href: "/partnerships" },
   ],
 }
