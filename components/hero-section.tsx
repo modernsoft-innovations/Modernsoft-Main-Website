@@ -67,7 +67,7 @@ export default function HeroSection() {
             <span className="text-[#0B1C2D]">
               Build Your Product with a Reliable
             </span>{" "}
-            <span className="text-yellow-500">
+            <span className="text-yellow-600">
                Offshore Team
             </span>
           </motion.h1>
