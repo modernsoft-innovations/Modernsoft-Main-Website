@@ -65,10 +65,10 @@ export default function HeroSection() {
             className="text-5xl md:text-7xl font-bold text-black mb-6"
           >
             <span className="text-[#0B1C2D]">
-              Build Your Product with a
+              Build Your Product with a Reliable
             </span>{" "}
-            <span className="text-yellow-700">
-              Reliable Offshore Team
+            <span className="text-yellow-500">
+               Offshore Team
             </span>
           </motion.h1>
 
