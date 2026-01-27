@@ -36,7 +36,7 @@ export default function AboutHero() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Software Development Partner for Growing Businesses</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Offshore Software Development Partner for Growing Businesses</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-12">
             We help startups, SMEs, and digital agencies build, run, and scale software products, from first MVP to long-term managed development — using a reliable offshore team based in Bangladesh.
 

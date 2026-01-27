@@ -60,13 +60,13 @@ export default function OurStory() {
                 Founded to Simplify Complex Technology
               </h3>
 
-              <p>
+              <p className="text-slate-500">
                 ModernSoft Innovations was founded in 2025 by Sadman Sakib and Nafiz Ahmed
                 with a clear goal: to help businesses avoid bloated, inefficient software
                 and instead build systems that actually support daily operations.
               </p>
 
-              <p>
+              <p className="text-slate-500">
                 Starting with a small internal management system for a local business,
                 we quickly realized that successful software is not about flashy features,
                 it’s about clarity, reliability, and long-term scalability.
@@ -76,7 +76,7 @@ export default function OurStory() {
                 Growing with a Business-First Mindset
               </h3>
 
-              <p>
+              <p className="text-slate-500">
                 Today, ModernSoft Innovations operates as a global offshore and white-label
                 development partner, supporting startups, agencies, and enterprises with
                 dedicated engineering teams.

@@ -1,126 +1,191 @@
 "use client"
 
-import Link from "next/link"
+import { useState } from "react"
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, CheckCircle } from "lucide-react"
 
 const models = [
   {
-    title: "Managed Development Services",
-    tag: "End-to-end ownership",
+    id: "dedicated",
+    title: "Dedicated Development Team",
+    headline: "Your Long-Term Engineering Team, Offshore",
     description:
-      "We take full responsibility for planning, development, delivery, and ongoing improvement. Acting as your long-term offshore engineering partner.",
+      "Hire a fully dedicated software development team that works exclusively on your product. We handle recruitment, management, payroll, and delivery so you get a stable team without operational overhead.",
+    bestFor:
+      "Best for startups and SaaS companies building or scaling a core product long-term.",
     points: [
-      "Roadmap planning, sprint execution, and QA",
-    "Release management and production support",
-    "Ongoing optimization, security, and scalability",
+      {
+        bold: "Dedicated engineers",
+        text: "working only on your product and roadmap",
+      },
+      {
+        bold: "Agile sprint execution",
+        text: "with transparent delivery and reporting",
+      },
+      {
+        bold: "Full team management",
+        text: "including hiring, HR, payroll, and performance",
+      },
+      {
+        bold: "Easy scaling",
+        text: "add or reduce team members as needed",
+      },
     ],
-    price: "Monthly retainer or custom pricing",
-    cta: "Explore Managed Services",
+    price: "Starting from $19/hour",
+    cta: "Hire a Dedicated Team",
   },
   {
-    title: "White Label Partnership",
-    tag: "Agency collaboration",
+    id: "offshore",
+    title: "Offshore Software Development",
+    headline: "End-to-End Software Development at Lower Cost",
     description:
-      "Engineering delivery under your brand while you retain full ownership of clients and commercial decisions.",
+      "Outsource complete software projects to an experienced offshore team in Bangladesh. Ideal for businesses that want reliable delivery, predictable cost, and high-quality engineering without building an in-house team.",
+    bestFor:
+      "Best for SMEs, agencies, and founders who want full project delivery with minimal involvement.",
     points: [
-      "Delivery handled under strict confidentiality",
-      "Ideal for agencies and consulting firms",
-      "Seamless extension of your delivery capacity",
+      {
+        bold: "Cost-efficient development",
+        text: "without compromising quality or security",
+      },
+      {
+        bold: "End-to-end delivery",
+        text: "from planning to deployment and support",
+      },
+      {
+        bold: "Experienced engineers",
+        text: "across web, mobile, and cloud platforms",
+      },
+      {
+        bold: "Clear communication",
+        text: "with regular updates and milestone tracking",
+      },
     ],
-    price: "$18–$40 / hour",
-    cta: "Partner With Us",
+    price: "Fixed or hourly pricing",
+    cta: "Start Offshore Development",
   },
   {
-    title: "Project-Based Delivery",
-    tag: "Fixed scope execution",
+    id: "augmentation",
+    title: "Software Staff Augmentation",
+    headline: "Extend Your Existing Team Instantly",
     description:
-      "Structured project delivery with defined scope, milestones, and clear accountability.",
+      "Add skilled offshore developers to your existing team without long-term contracts. Our engineers integrate directly into your workflow and report to your team.",
+    bestFor:
+      "Best for companies with in-house teams that need extra hands fast.",
     points: [
-      "Clearly defined scope and timeline",
-      "Milestone-based execution and reporting",
-      "Suitable for MVPs and system development",
+      {
+        bold: "Quick access to talent",
+        text: "without long hiring cycles",
+      },
+      {
+        bold: "Direct control",
+        text: "you manage tasks and priorities",
+      },
+      {
+        bold: "Flexible engagement",
+        text: "short-term or long-term",
+      },
+      {
+        bold: "Fast onboarding",
+        text: "engineers ready in days, not months",
+      },
     ],
-    price: "Fixed price or $18–$40/hr",
-    cta: "Start a Project",
+    price: "Starting from $18/hour",
+    cta: "Augment Your Team",
   },
 ]
 
 export default function CollaborationModels() {
+  const [active, setActive] = useState(models[0])
+
   return (
-    <section className="py-28 bg-slate-50">
+    <section className="py-28 bg-blue-50">
       <div className="container mx-auto px-6">
 
         {/* HEADER */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0B1E3C] mb-4">
             Engagement Models
           </h2>
           <p className="text-lg text-slate-600">
-            Flexible collaboration options designed to fit different business and delivery needs.
+            Choose the right collaboration model based on your business goals,
+            team structure, and delivery needs.
           </p>
         </div>
 
-        {/* CARDS */}
+        {/* CONTENT */}
         <div className="grid lg:grid-cols-3 gap-10">
-          {models.map((model, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all flex flex-col"
-            >
-              <div className="mb-5">
-                <p className="text-xs uppercase tracking-wide text-slate-500 mb-2">
-                  {model.tag}
-                </p>
-                <h3 className="text-2xl font-semibold text-slate-900">
+
+          {/* LEFT TABS */}
+          <div className="flex lg:flex-col gap-4 overflow-x-auto lg:overflow-visible">
+            {models.map((model) => (
+              <button
+                key={model.id}
+                onClick={() => setActive(model)}
+                className={`min-w-[260px] px-6 py-5 rounded-xl border text-left transition-all
+                  ${
+                    active.id === model.id
+                      ? "bg-[#0B1E3C] text-white border-[#0B1E3C]"
+                      : "bg-white text-slate-700 border-slate-200 hover:border-slate-400"
+                  }
+                `}
+              >
+                <h3 className="text-xl md:text-2xl font-semibold">
                   {model.title}
                 </h3>
-              </div>
+              </button>
+            ))}
+          </div>
 
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                {model.description}
+          {/* RIGHT DETAILS */}
+          <motion.div
+            key={active.id}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+            className="lg:col-span-2 border border-slate-200 rounded-2xl p-8 md:p-10"
+          >
+            <h3 className="text-3xl md:text-4xl font-semibold text-[#0B1E3C] mb-4">
+              {active.headline}
+            </h3>
+
+            <p className="text-slate-600 text-lg leading-relaxed mb-4">
+              {active.description}
+            </p>
+
+            <p className="text-slate-800 font-medium mb-8">
+              <span className="text-slate-500">Best for:</span> {active.bestFor}
+            </p>
+
+            <ul className="space-y-4 mb-10">
+              {active.points.map((point, i) => (
+                <li key={i} className="flex gap-4 text-slate-700">
+                  <CheckCircle className="w-6 h-6 text-[#0B1E3C] flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="font-semibold text-slate-900">
+                      {point.bold}
+                    </strong>{" "}
+                    {point.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+              <p className="text-lg font-semibold text-slate-600">
+                {active.price}
               </p>
 
-              <ul className="space-y-3 mb-6">
-                {model.points.map((point, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-700">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-auto pt-5 border-t">
-                <p className="text-sm font-medium text-slate-600 mb-4">
-                  {model.price}
-                </p>
-
-                <Link href="/contact">
-                  <Button className="w-full bg-[#0B1E3C] hover:bg-[#122b55] text-white h-11">
-                    {model.cta}
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+              <Link href="/contact">
+                <Button className="h-12 px-8 bg-amber-300 hover:bg-amber-400 text-black flex items-center">
+                  {active.cta}
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
-
-        {/* SECONDARY CTA */}
-        <div className="text-center mt-16">
-          <Link href="/partnerships">
-            <Button className="bg-yellow-400 hover:bg-yellow-300" size="lg">
-              View Collaboration Details
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
-        </div>
-
       </div>
     </section>
   )

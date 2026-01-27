@@ -18,7 +18,7 @@ import Link from "next/link"
 
 const services = [
   {
-    title: "Business Software Development",
+    title: "Custom Software Development",
     description:
       "ERP, POS, HRM, supply chain and internal management systems tailored to your business workflow.",
     icon: Settings,

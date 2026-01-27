@@ -16,10 +16,10 @@ import ScrollStack from "@/components/scroll-stack";
 
 export const metadata: Metadata = {
   title:
-    "Software & Web Development Company | Modernsoft Innovations",
+    "Offshore Software & Web Development Company | Modernsoft Innovations",
 
   description:
-    "We help SMEs, startups, and global founders design, build, and scale web, mobile, and AI software—reliably and cost-effectively.",
+    "Modernsoft Innovations is a leading software and web development company providing custom solutions for startups and enterprises worldwide.",
 
 
   alternates: {
@@ -138,10 +138,9 @@ export default function HomePage() {
         <ServicesSection />
         <CollaborationModels />
         <IndustriesSection />
-        <DevelopmentProcess />
-
-        <StatsSection />
         <TechStackSection />
+        <DevelopmentProcess />
+        <StatsSection />
         <TestimonialsSection />
         <WhyChooseUsSection />
         <CTASection />

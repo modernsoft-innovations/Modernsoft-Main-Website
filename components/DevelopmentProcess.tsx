@@ -38,7 +38,7 @@ const steps = [
 
 export default function DevelopmentProcess() {
   return (
-    <section className="py-28 bg-white">
+    <section className="py-28 bg-blue-50">
       <div className="container mx-auto px-6">
 
         {/* HEADER */}

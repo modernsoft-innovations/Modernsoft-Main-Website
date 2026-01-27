@@ -1,114 +1,98 @@
 "use client"
 
 import { motion } from "framer-motion"
-import {
-  Award,
-  Users,
-  Zap,
-  MessageSquare,
-  DollarSign,
-  HeartHandshake,
-} from "lucide-react"
 
-const reasons = [
+const items = [
   {
-  
-    icon: Award,
-    title: "Modern Technology",
-    description:
-      "We use the latest tools and frameworks to build fast, secure, and future-ready software.",
+    title: "Team Culture",
+    modernsoft: "Young, focused, and engineering-driven",
+    others: "Rigid, corporate, slower to adapt",
   },
   {
-    icon: Users,
-    title: "Experienced Professionals",
-    description:
-      "A skilled team of engineers and designers who understand both business and technology.",
+    title: "Talent Selection",
+    modernsoft: "Carefully selected engineers from top institutions",
+    others: "Generic hiring, often outsourced or junior",
   },
   {
-    icon: Zap,
-    title: "Clear & Simple Process",
-    description:
-      "Transparent workflow with regular updates, demos, and open communication.",
+    title: "Workflow & Delivery",
+    modernsoft: "Structured execution with full delivery visibility",
+    others: "Loosely defined processes and timelines",
   },
   {
-    icon: DollarSign,
-    title: "Cost-Effective Solutions",
-    description:
-      "High-quality software at competitive pricing—no hidden costs or surprises.",
+    title: "Long-Term Commitment",
+    modernsoft: "Same core team retained across project lifecycle",
+    others: "Frequent resource changes post-kickoff",
   },
   {
-    icon: MessageSquare,
-    title: "Quality You Can Trust",
-    description:
-      "Thorough testing and quality checks to ensure reliability and performance.",
+    title: "Communication",
+    modernsoft: "Direct, real-time collaboration with engineers",
+    others: "Indirect communication via account layers",
   },
   {
-    icon: HeartHandshake,
-    title: "Long-Term Support",
-    description:
-      "We stay with you after launch, offering support, updates, and improvements.",
+    title: "Security & IP",
+    modernsoft: "Strict NDAs and full IP ownership",
+    others: "Shared environments and unclear IP control",
   },
 ]
 
-export default function WhyChooseUsSection() {
+export default function WhatMakesModernsoftDifferent() {
   return (
-    <section className="py-28 bg-[#F8FAFC]">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-20"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
-          <p className="text-sm uppercase tracking-widest text-orange-500 font-semibold mb-4">
-            Why Choose Us
-          </p>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            A Reliable IT Partner You Can Trust
+          <h2 className="text-4xl md:text-5xl font-semibold text-slate-900">
+            What Makes <span className="text-amber-600">Modernsoft</span> Different
           </h2>
-
-          <p className="text-lg text-slate-600">
-            We focus on clarity, quality, and long-term value—so you get software
-            that actually helps your business grow.
-          </p>
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reasons.map((reason, index) => {
-            const Icon = reason.icon
+        {/* Comparison Table Container */}
+        <div className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+          
+          {/* Table Header Row */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6 px-8 py-5 bg-slate-50 border-b border-slate-200">
+            <div className="text-xs font-bold uppercase tracking-wider text-slate-500">Category</div>
+            <div className="text-xs font-bold uppercase tracking-wider text-blue-600">Modernsoft</div>
+            <div className="text-xs font-bold uppercase tracking-wider text-slate-500">Others</div>
+          </div>
 
-            return (
-              <motion.div
-                key={reason.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="bg-white border border-slate-200 rounded-2xl p-8 
-                           hover:shadow-xl hover:-translate-y-1 
-                           transition-all duration-300"
-              >
-                <div className="w-14 h-14 mb-6 rounded-xl bg-orange-500/10 
-                                flex items-center justify-center">
-                  <Icon className="w-7 h-7 text-orange-500" />
-                </div>
+          {items.map((item, index) => (
+            <div
+              key={item.title}
+              className={`grid md:grid-cols-3 gap-6 px-8 py-6 items-center transition-colors hover:bg-slate-50/50 ${
+                index !== items.length - 1
+                  ? "border-b border-slate-200"
+                  : ""
+              }`}
+            >
+              {/* Title (Mobile Label Included) */}
+              <div className="font-semibold text-slate-900 md:font-medium">
+                <span className="md:hidden block text-xs uppercase text-slate-400 mb-1">Category</span>
+                {item.title}
+              </div>
 
-                <h3 className="text-2xl font-semibold text-slate-900 mb-3">
-                  {reason.title}
-                </h3>
+              {/* Modernsoft Column */}
+              <div className="text-slate-800 font-medium">
+                <span className="md:hidden block text-xs uppercase text-blue-400 mb-1">Modernsoft</span>
+                {item.modernsoft}
+              </div>
 
-                <p className="text-slate-600 leading-relaxed">
-                  {reason.description}
-                </p>
-              </motion.div>
-            )
-          })}
+              {/* Others Column */}
+              <div className="text-slate-500">
+                <span className="md:hidden block text-xs uppercase text-slate-400 mb-1">Others</span>
+                {item.others}
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   )

@@ -144,7 +144,7 @@ function ServicesHero() {
 
 function ServicesSection() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-blue-50">
       <div className="container mx-auto px-4 space-y-20">
         {serviceGroups.map((group, groupIndex) => (
           <div key={group.groupTitle}>
